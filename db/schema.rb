@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_08_24_131637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.string "call_to_action"
+    t.string "description"
+    t.string "link"
+    t.string "category"
+    t.string "infobox_title"
+    t.string "infobox_desc"
+    t.string "infobox_link"
+    t.string "impact_level"
+    t.integer "impact_co"
+    t.integer "impact_money"
+    t.string "impact_desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
