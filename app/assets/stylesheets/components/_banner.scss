@@ -1,0 +1,40 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 80vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-green-bird {
+  color: white;
+  padding: 15px 35px;
+  border-radius: 4px;
+  background: #FA8334;
+  transition: background 0.3s ease;
+}
+
+.btn-green-bird:hover {
+  background: #FBA870;
+  color: white;
+  text-decoration: none;
+}
+
+.buttons-div {
+  margin-top: 35px;
+}
