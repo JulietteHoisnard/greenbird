@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
+gem 'pundit'
 gem 'simple_form'
 
 group :development, :test do
@@ -63,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Add devise authentification management
 gem 'devise'
+
+# Add cloudinary active storage
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
