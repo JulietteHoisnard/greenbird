@@ -1,0 +1,65 @@
+.card-lp {
+  border: 1px solid #8CC34A;
+  border-radius: 4px;
+  margin: 20px 5px;
+  max-width: 275px;
+  height: 300px;
+  text-align: center;
+  padding: 50px 25px;
+  font-weight: bold;
+  box-shadow: 3px 8px 10px #888888;
+  background: white;
+}
+
+.card-lp:hover {
+
+  background: #8CC34A;
+  color: white;
+  transition: 0.3s;
+  box-shadow: 5px 15px 10px #888888;
+}
+
+.active-card {
+  background: #8CC34A;
+  color: white;
+}
+
+.card-testimonial {
+  border: 1px solid #989898;
+  background: white;
+  border-radius: 4px;
+  margin: 100px 5px;
+  max-width: 330px;
+  height: 400px;
+  text-align: center;
+  padding: 90px 25px;
+  box-shadow: 3px 8px 10px #888888;
+  position: relative;
+}
+
+.justi {
+  justify-content: space-around;
+}
+
+.avatar-landing {
+  width:100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: 115px;
+  // border: 1px solid #888888;
+  // box-shadow: 2px 6px 5px #888888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
