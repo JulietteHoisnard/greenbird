@@ -1,0 +1,18 @@
+.box {
+  display: flex;
+  color:white;
+}
+
+.small-box {
+  background-color: purple;
+  padding: 30px;
+  margin:20px;
+}
+
+.data-challenge {
+  flex-grow: 1;
+}
+
+h3 {
+  padding-bottom: 30px;
+}
