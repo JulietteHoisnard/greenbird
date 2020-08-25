@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Add devise authentification management
 gem 'devise'
+
+# Add secret cloudinary key
+gem 'dotenv-rails', groups: [:development, :test]
