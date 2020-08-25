@@ -1,1 +1,17 @@
 <h1>Edit the challenge</h1>
+
+<%= simple_form_for @challenge do |f| %>
+  <%= f.input :title %>
+  <%= f.input :call_to_action %>
+  <%= f.input :description %>
+  <%= f.input :link %>
+  <%= f.input :category %>
+  <%= f.input :infobox_title %>
+  <%= f.input :infobox_desc %>
+  <%= f.input :infobox_link %>
+  <%= f.input :impact_level %>
+  <%= f.input :impact_co %>
+  <%= f.input :impact_money %>
+  <%= f.input :impact_desc %>
+  <%= f.submit %>
+<% end %>
