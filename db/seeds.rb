@@ -8,6 +8,12 @@ require 'json'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-challengeONE = Challenge.create(title: "Commute by Bike", call_to_action: "I commute by bike today whether going to work, sports, or shopping, etc.", description: "Riding a bike accounts for about 21g of CO2 emissions per kilometer, which is more than ten times less than a car.", category: "move", impact_co: 61, impact_level: "medium")
+puts "Creating challenges..."
 
-challengeTWO = Challenge.create(title: "Eat Lower on the Food Chain", call_to_action: "I will have all vegetarian meals today", description: "Meat lovers have the highest carbon footprint at 3.3 tons of greenhouse gas emissions. A vegan diet has the lowest carbon footprint at just 1.5 tons CO2e (Carbon Dioxide Equivalent). You can reduce your foodprint by a quarter just by cutting down on red meats such as beef and lamb.", category: "eat", impact_co: 1325, impact_level: "medium")
+one = Challenge.create(title: "Commute by Bike", call_to_action: "I commute by bike today whether going to work, sports, or shopping, etc.", description: "Riding a bike accounts for about 21g of CO2 emissions per kilometer, which is more than ten times less than a car.", category: "move", impact_co: 61, impact_level: "medium")
+
+puts "Challenge #{one.title} created!"
+
+two = Challenge.create(title: "Eat Lower on the Food Chain", call_to_action: "I will have all vegetarian meals today", description: "Meat lovers have the highest carbon footprint at 3.3 tons of greenhouse gas emissions. A vegan diet has the lowest carbon footprint at just 1.5 tons CO2e (Carbon Dioxide Equivalent). You can reduce your foodprint by a quarter just by cutting down on red meats such as beef and lamb.", category: "eat", impact_co: 1325, impact_level: "medium")
+
+puts "Challenge #{two.title} created!"
