@@ -1,1 +1,18 @@
-<h1>Challenge</h1>
+<div class="container">
+  <div class="box challenge">
+    <div>
+      <h1><%= @challenge.call_to_action %></h1>
+      <h2><%= @challenge.description %></h2>
+    </div>
+    <div class="btn btn-warning">
+      <%= link_to 'Challenge done!', dashboard_path, class: "link-color" %>
+    </div>
+
+  </div>
+  <div class="box">
+    <div class="box small-box info-challenge">
+    </div>
+    <div class="box small-box info-challenge">
+    </div>
+  </div>
+</div>
