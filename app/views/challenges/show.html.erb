@@ -1,1 +1,32 @@
-<h1>Challenge</h1>
+<div class="container">
+  <div class="box small-box challenge">
+    <div>
+      <h1><%= @challenge.call_to_action %></h1>
+      <h2><%= @challenge.description %></h2>
+      <h3><%= @challenge.link %></h3>
+      <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird" %>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="small-box info-challenge">
+      <div>
+        <h1><%= @challenge.infobox_title %></h1>
+        <h2><%= @challenge.infobox_desc %></h2>
+        <h3><%= @challenge.infobox_link %></h3>
+      </div>
+      <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird" %>
+    </div>
+    
+    <div class="small-box data-challenge">
+      <h2>If I do this action everyday, my impact per year is:</h2>
+      <h1><%= @challenge.impact_co %> kg of CO2</h1>
+      <h2><%= @challenge.impact_level %> level</h2>
+      <h2><%= @challenge.impact_money %> €</h2>
+      <h2>Main impacts: <%= @challenge.impact_desc %></h2>
+
+    </div>
+  </div>
+
+
+</div>
