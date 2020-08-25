@@ -1,1 +1,89 @@
-<h1>Profile</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <h2 style="text-align:center">User Profile</h2>
+
+      <div class="card-container d-flex">
+        <div class="card profile-card"style="width: 350px; height: 400px;">
+          <%#=cl_image_tag @user.avatar_url,:class=>"card-img-top avatar-profile", crop: :fill %>
+          <div class="card-body">
+              <div class="row description justify-content-center">
+                <div class="col-xl-12 text-center">
+             <h6>A bit about me</h6>
+              <p>My Bio</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-7">
+      <div>
+        <h2 style="text-align:center">Badges</h2>
+      </div>
+
+
+      <div class="d-flex flex-wrap justify-content-space-between">
+        <div class="p-2 bd-highlight">
+         <div class="card" style="width: 150px; height: 150px;">
+          <div class="card-body">
+            <h7 class="card-title">Name</h7>
+              <p class="card-text">Description</p>
+              <p class="card-text">Icon</p>
+
+          </div>
+        </div>
+      </div>
+
+        <div class="p-2 bd-highlight">
+          <div class="card" style="width: 150px; height: 150px;">
+            <div class="card-body">
+              <h7 class="card-title">Name</h7>
+                <p class="card-text">Description</p>
+                  <p class="card-text">Icon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-2 bd-highlight">
+          <div class="card" style="width: 150px; height: 150px;">
+            <div class="card-body">
+              <h7 class="card-title">Name</h7>
+                <p class="card-text">Description</p>
+                  <p class="card-text">Icon</p>
+            </div>
+          </div>
+        </div>
+
+         <div class="p-2 bd-highlight">
+          <div class="card" style="width: 150px; height: 150px;">
+            <div class="card-body">
+              <h7 class="card-title">Name</h7>
+                <p class="card-text">Description</p>
+                  <p class="card-text">Icon</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+        <h2 style="text-align:center">Achievements</h2>
+            <div class="row">
+            <div class="card" style="width: 600px; height: 300px">
+              <div class="card-body">
+                <h7 class="card-title">Graph Here</h7>
+                <p class="card-text">Graph Description</p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
