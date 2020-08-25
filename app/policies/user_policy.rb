@@ -5,15 +5,19 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  def dashboard?
+    record == user
+  end
+
   def show?
     true
   end
 
   def edit?
-    true
+    record == user
   end
 
   def update?
-    true
+    record == user
   end
 end
