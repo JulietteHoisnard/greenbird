@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def dashboard
+    @challenges = @user.challenges
   end
 
   def show
