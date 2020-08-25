@@ -1,0 +1,27 @@
+.footer {
+  background: #fa8334;
+  color: white;
+  text-align: center;
+  margin-top:30px;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+}
+
+.footer > p {
+  padding: 0;
+  margin: 0;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
