@@ -1,23 +1,34 @@
 <div class="container">
-  <div>
-    <%= cl_image_tag current_user.avatar_url, class: "avatar" %>
+  <div class="top-banner">
+    <%= cl_image_tag current_user.avatar_url, class: "avatar-large avatar-banner" %>
     <h1>Welcome <%= @user.username %></h1>
   </div>
-   <div>
+  <div>
     <div>
       <h2>My ranking</h2>
-       <h3>in <%= @user.country%></h3>
-       <h3>5</h3>
+        <h3>in <%= @user.country %></h3>
+        <h3>5</h3>
     </div>
     <div>
       <h2>Days in a row</h2>
       <h3>5</h3>
     </div>
     <div>
-      <h2>Days in a row</h2>
+      <h2>Challenges done</h2>
       <h3>5</h3>
+    </div>
+    <div>
+      <h2>Optional challenges done</h2>
+      <h3>3</h3>
     </div>
   </div>
-   <div>
+  <div class="bottom-box">
+    <div class="half-bottom">
+      <h1>Done challenges</h1>
+    </div>
+    <div div class="half-bottom">
+      <h1>Next challenge:</h1>
+      <%= Challenge.last.title %>
+    </div>
   </div>
 </div>

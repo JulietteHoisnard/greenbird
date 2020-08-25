@@ -1,4 +1,24 @@
-.box {
+.top-banner {
+  text-align: center;
+  border: solid green 1px;
+  position: relative;
+  margin: 50px 0 30px 0;
+  padding: 40px;
+}
+
+.bottom-box {
   display: flex;
   color:white;
+}
+
+// similar to class small-box in clallenges _show
+.half-bottom {
+  background-color: purple;
+  padding: 30px;
+  margin:20px;
+}
+
+.avatar-banner {
+  position: absolute;
+  top: -35px;
 }
