@@ -8,6 +8,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   def avatar_url
-    photo.present? ? photo.key : 'default'
+    photo.present? ? photo.key : 'defaultavatar'
   end
 end
