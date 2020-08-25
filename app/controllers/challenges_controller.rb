@@ -10,10 +10,12 @@ class ChallengesController < ApplicationController
 
   def new
     @challenge = Challenge.new
+    authorize @challenge
   end
 
   def create
     @challenge = Challenge.new(challenge_params)
+    authorize @challenge
 
     if @challenge.save
       redirect_to @challenge, notice: 'Your challenge was successfully created!'
@@ -26,8 +28,11 @@ class ChallengesController < ApplicationController
   end
 
   def update
-    @challenge.update(challenge_params)
-    redirect_to @challenge
+    if @challenge.update(challenge_params)
+      redirect_to @challenge
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -43,6 +48,7 @@ class ChallengesController < ApplicationController
 
   def set_challenge
     @challenge = Challenge.find(params[:id])
+    authorize @challenge
   end
 
 end
