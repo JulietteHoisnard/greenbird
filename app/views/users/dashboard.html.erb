@@ -1,9 +1,14 @@
 <div class="container">
   <div>
-    <%# <%= user.photo %>
+    <%= cl_image_tag current_user.avatar_url, class: "avatar" %>
     <h1>Welcome <%= @user.username %></h1>
   </div>
    <div>
+    <div>
+      <h2>My ranking</h2>
+       <h3>in <%= @user.country%></h3>
+       <h3>5</h3>
+    </div>
   </div>
    <div>
   </div>
