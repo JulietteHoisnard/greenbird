@@ -32,8 +32,4 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def completed?
-    @challenge_user.completed
-  end
-
 end
