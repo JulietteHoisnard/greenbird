@@ -29,18 +29,28 @@
 
 .bottom-box {
   display: flex;
-  color:white;
   justify-content: space-between;
 }
 
 // similar to class small-box in clallenges _show
 .half-bottom {
-  background-color: purple;
   border-radius: 4px;
   padding: 30px;
   margin: 30px 0;
   flex: 0 0 auto;
   width: 49%;
+}
+
+.half-bottom-left {
+  border: solid #8CC34A 1px;
+  background: white;
+  color: black;
+}
+
+.half-bottom-right {
+  background: purple;
+  color:white;
+
 }
 
 .avatar-banner {
