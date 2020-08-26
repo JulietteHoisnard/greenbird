@@ -3,8 +3,9 @@
     <%= simple_form_for [@user] do |f| %>
     <%= f.input :username %>
     <%= f.input :bio %>
+    <%= f.input :country, as: :text %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit 'Modify', class: 'btn-greenbird' %>
+    <%= f.submit 'Modify', class: 'btn-green-bird' %>
     <% end %>
     <hr>
 </div>

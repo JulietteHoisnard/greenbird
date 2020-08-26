@@ -1,8 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-5">
-      <h2 style="text-align:center">User Profile</h2>
-
       <div class="card-container d-flex">
         <div class="card-profile">
           <%=cl_image_tag @user.avatar_url,:class=>"card-img-top avatar-profile", crop: :fill%>
@@ -10,12 +8,15 @@
             <div class="row description justify-content-center">
               <div class="col-xl-12 text-center">
                 <h4><%= @user.username %></h4>
-                <p>My Bio</p>
+                <p>My Country:</p>
+                <h4><%= @user.country %></h4>
+                <p>My Bio:</p>
+                <h4 class="margin-button-edit"><%= @user.bio %></h4>
               </div>
             </div>
           </div>
           <div class="card-buttons">
-            <%= link_to 'Edit profile', edit_user_path, class: "link-color btn-greenbird" %>
+            <%= link_to 'Edit profile', edit_user_path, class: "link-color btn-green-bird" %>
           </div>
         </div>
       </div>
