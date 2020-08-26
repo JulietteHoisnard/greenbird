@@ -1,0 +1,49 @@
+.footer-bottom {
+  background: #dddddd;
+  text-align: center;
+  margin-top:30px;
+  padding: 20px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  font-size: 12px;
+  vertical-align: center;
+}
+
+.footer-top {
+  background: #eaeaea;
+  text-align: center;
+  margin-top:30px;
+  padding: 20px;
+  width: 100%;
+  height: 5.5rem;
+  display: block;
+  font-size: 12px;
+}
+
+  a {
+  text-decoration: none;
+  color: inherit;
+  }
+
+  a:hover {
+     text-decoration: none;
+  color: inherit;
+  }
+
+.footer > p {
+  padding: 0;
+  margin: 0;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
