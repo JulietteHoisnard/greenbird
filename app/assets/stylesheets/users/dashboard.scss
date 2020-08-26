@@ -1,4 +1,49 @@
-.box {
+.top-banner {
+  text-align: center;
+  border: solid #8CC34A 1px;
+  position: relative;
+  margin: 50px 0 30px 0;
+  padding: 50px 0 30px 0;
+  background: white;
+  border-radius: 4px;
+}
+
+.rankings-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ranking-card {
+  padding: 20px;
+  border: solid #8CC34A 1px;
+  background: white;
+  border-radius: 4px;
+  width: 200px;
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+.margin-ranking-card {
+  margin-right: 20px;
+}
+
+.bottom-box {
   display: flex;
   color:white;
+  justify-content: space-between;
+}
+
+// similar to class small-box in clallenges _show
+.half-bottom {
+  background-color: purple;
+  border-radius: 4px;
+  padding: 30px;
+  margin: 30px 0;
+  flex: 0 0 auto;
+  width: 49%;
+}
+
+.avatar-banner {
+  position: absolute;
+  top: -35px;
 }
