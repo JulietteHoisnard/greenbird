@@ -3,6 +3,7 @@
     <%= cl_image_tag current_user.avatar_url, class: "avatar-large avatar-banner" %>
     <h1>Welcome <%= @user.username %></h1>
   </div>
+
   <div class="rankings-container">
     <div class="ranking-card margin-ranking-card ">
       <h2>My ranking</h2>
@@ -22,7 +23,9 @@
       <h3>3</h3>
     </div>
   </div>
+
   <div class="bottom-box">
+
     <div class="half-bottom margin-ranking-card half-bottom-left">
       <h1>Done challenges</h1>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -47,6 +50,7 @@
         </a>
       </div>
     </div>
+
     <div div class="half-bottom half-bottom-right">
       <h1>Next challenge:</h1>
       <%= Challenge.last.title %>

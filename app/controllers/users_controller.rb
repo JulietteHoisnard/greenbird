@@ -2,7 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def dashboard
+  #  @challenge_user
+  #  @challenge = Challenge.find(params[:challenge_id])
     @challenges = @user.challenges
+  #  @challenge_user = @challenges.first
   end
 
   def show
@@ -31,3 +34,19 @@ class UsersController < ApplicationController
 
 
 end
+
+# PSEUDOCODE
+
+# available_challenges = @user.challenge_users.completed == false
+# --> @challenges = @user.challenge_user.completed == false
+# --> @challenge = @challenges.first
+
+# finished_challenges = @user.challenge_users.completed == true
+
+# finished_challenges.count for Challenges done
+
+
+
+
+
+
