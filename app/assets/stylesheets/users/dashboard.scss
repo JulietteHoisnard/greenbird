@@ -6,6 +6,7 @@
   padding: 50px 0 30px 0;
   background: white;
   border-radius: 4px;
+  box-shadow: 3px 8px 10px #888888;
 }
 
 .rankings-container {
@@ -21,6 +22,7 @@
   width: 200px;
   flex: 1 0 auto;
   text-align: center;
+  box-shadow: 3px 8px 10px #888888;
 }
 
 .margin-ranking-card {
@@ -39,12 +41,14 @@
   margin: 30px 0;
   flex: 0 0 auto;
   width: 49%;
+  box-shadow: 3px 8px 10px #888888;
 }
 
 .half-bottom-left {
   border: solid #8CC34A 1px;
   background: white;
   color: black;
+
 }
 
 .half-bottom-right {
