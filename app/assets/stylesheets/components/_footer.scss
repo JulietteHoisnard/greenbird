@@ -24,6 +24,16 @@
   font-size: 12px;
 }
 
+  a {
+  text-decoration: none;
+  color: inherit;
+  }
+
+  a:hover {
+     text-decoration: none;
+  color: inherit;
+  }
+
 .footer > p {
   padding: 0;
   margin: 0;
