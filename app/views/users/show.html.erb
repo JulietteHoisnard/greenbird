@@ -9,7 +9,10 @@
               <div class="col-xl-12 text-center">
                 <h4><%= @user.username %></h4>
                 <p>My Country:</p>
-                <h4><%= @user.country %></h4>
+                <h4><%= @user.country %> <% if @user.country != 'World' %>
+                    <%= ISO3166::Country.find_country_by_name(@user.country).emoji_flag %>
+                    <% end %>
+                </h4>
                 <p>My Bio:</p>
                 <h4 class="margin-button-edit"><%= @user.bio %></h4>
               </div>
