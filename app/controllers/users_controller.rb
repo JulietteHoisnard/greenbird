@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @challenges = @user.challenges
+    @challenges_done = ChallengeUser.where(completed: true)
+    # with the above line you can access and use data from the challenges the user has completed
   end
 
   def edit
