@@ -2,11 +2,15 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def dashboard
-    @challenges = @user.challenges
+    @challenges_todo = ChallengeUser.where(completed: false)
+    @challenges_done = ChallengeUser.where(completed: true)
+
+    @challenge = @challenges_todo.first
   end
 
   def show
-    @challenges = @user.challenges
+    @challenges_done = ChallengeUser.where(completed: true)
+    # with the above line you can access and use data from the challenges the user has completed
   end
 
   def edit
@@ -28,6 +32,5 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
   end
-
 
 end
