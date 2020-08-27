@@ -1,12 +1,37 @@
+.box-challenge {
+  // color:white;
+  height: 350px;
+  margin-top: 20px !important;
+}
+
+.box-challenge > p {
+  margin-bottom: 20px;
+}
+
+.btn-c-cta {
+  margin-top: 10px;
+}
+
 .box {
-  display: flex;
-  color:white;
+  border-radius: 4px;
+  background-color: white;
+  padding: 30px;
+  margin:10px 5px;
+  text-align: center;
 }
 
 .small-box {
-  background-color: purple;
-  padding: 30px;
-  margin:20px;
+  background: white;
+  height: 300px;
+  vertical-align: sub;
+}
+
+.info-challenge {
+
+}
+
+.button-read {
+  margin-bottom: 20px;
 }
 
 .data-challenge {
@@ -14,5 +39,25 @@
 }
 
 h3 {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.m-bottom {
+  margin-bottom: 80px;
+}
+
+.btn-green-bird-empty {
+  color: #FA8334;
+  padding: 15px 35px;
+  border: 1px solid #FA8334;
+  border-radius: 4px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.btn-green-bird-empty:hover {
+  background: #FBA870;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #FBA870;
 }
