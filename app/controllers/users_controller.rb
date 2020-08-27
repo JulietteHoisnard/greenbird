@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       end
     end
     p @datauser
+    @badge1 = "https://image.flaticon.com/icons/svg/814/814513.svg"
   end
 
   def edit
