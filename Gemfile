@@ -73,3 +73,4 @@ gem 'countries'
 
 # Chart with chartkick
 gem "chartkick"
+gem 'groupdate'

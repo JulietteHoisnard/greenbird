@@ -32,3 +32,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// Chart
+require("chartkick")
+require("chart.js")
+
