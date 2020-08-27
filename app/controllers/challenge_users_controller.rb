@@ -8,6 +8,6 @@ class ChallengeUsersController < ApplicationController
 
     @challenge_user.completed = true
     @challenge_user.save
-    redirect_to dashboard_path(@user), notice: "Redirecting you back to your dashboard, you awesome person!"
+    redirect_to dashboard_path(@user), notice: "You rock! Redirecting you back to your dashboard..."
   end
 end

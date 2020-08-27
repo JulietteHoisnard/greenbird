@@ -5,7 +5,7 @@
       <p><%= @challenge.description %></p>
      <!-- <p><%= @challenge.link %></p> --><br>
       <div btn-c-cta>
-        <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, data: { confirm: "You did it!!!"}, class: "link-color btn-green-bird" %>
+        <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, class: "link-color btn-green-bird" %>
         <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
       </div>
     </div>
