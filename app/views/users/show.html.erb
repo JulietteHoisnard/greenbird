@@ -86,9 +86,9 @@
               <div class="card-body">
                 <h4 class="card-title">
                   <%= line_chart [
-                    {name: @user.country, data: [5, 4, 3, 2, 1]},
-                    {name: "World", data: [1, 2, 3, 4, 5]}
-                  ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#b00", "#666"], id: "users-chart", width: "300px", height: "200px"%>
+                    {name: @user.country, data: @datauser},
+                    {name: "World", data: @data}
+                  ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#b00", "#666"], id: "users-chart", width: "500px", height: "350px"%>
                 </h4>
                 <p class="card-text">Graph Description</p>
               </div>
