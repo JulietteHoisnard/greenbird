@@ -36,8 +36,7 @@ gem 'simple_form'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
-
+  
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -68,3 +67,10 @@ gem 'devise'
 # Add cloudinary active storage
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
+
+# Country emojiiii
+gem 'countries'
+
+# Chart with chartkick
+gem "chartkick"
+gem 'groupdate'
