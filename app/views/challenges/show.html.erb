@@ -4,7 +4,7 @@
       <h1><%= @challenge.call_to_action %></h1>
       <h2><%= @challenge.description %></h2>
       <h3><%= @challenge.link %></h3>
-      <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird" %>
+      <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, data: { confirm: "You did it!!!"}, class: "link-color btn-green-bird" %>
     </div>
   </div>
 
