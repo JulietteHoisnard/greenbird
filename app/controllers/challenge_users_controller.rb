@@ -3,8 +3,11 @@ class ChallengeUsersController < ApplicationController
   def update
     @challenge = Challenge.find(params[:challenge_id])
     @user = current_user
-    @instance = ChallengeUser.where(user_id: @user.id, challenge_id: @challenge.id).first
-    @instance.completed = true
+    @challenge_user = ChallengeUser.where(user_id: @user.id, challenge_id: @challenge.id).first
+    authorize @challenge_user
+
+    @challenge_user.completed = true
+    @challenge_user.save
     redirect_to dashboard_path(@user), notice: "Redirecting you back to your dashboard, you awesome person!"
   end
 end
