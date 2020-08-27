@@ -8,6 +8,7 @@ class ChallengesController < ApplicationController
   def show
     # @instance = @challenge.challenge_users
     @instance = ChallengeUser.where(user_id: current_user.id, challenge_id: @challenge.id).first
+    # to be worked on more later, testing with raise in actioncontroller
   end
 
   def new
