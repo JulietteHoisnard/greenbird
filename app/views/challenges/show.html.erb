@@ -1,12 +1,12 @@
 <div class="container m-bottom">
-  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: url("img_tree.gif");">
+  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("banner-greenbird.jpg") %>);">
     <div>
       <h3><%= @challenge.call_to_action %></h3>
       <p><%= @challenge.description %></p>
      <!-- <p><%= @challenge.link %></p> --><br>
       <div btn-c-cta>
         <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird" %>
-        <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty" %>
+        <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
       </div>
     </div>
   </div>
