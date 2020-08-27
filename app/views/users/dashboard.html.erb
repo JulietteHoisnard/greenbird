@@ -54,8 +54,10 @@
     </div>
 
     <div div class="half-bottom half-bottom-right">
-      <h1>Next challenge:</h1>
-      <%= @challenge.challenge.title %>
+      <%= link_to challenge_path(@challenge.challenge) do %>
+        <h1>Next challenge:</h1>
+        <%= @challenge.challenge.title %>
+      <% end %>
     </div>
   </div>
 </div>
