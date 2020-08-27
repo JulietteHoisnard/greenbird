@@ -6,16 +6,26 @@
   left: 25px;
 }
 
+.avatar-user-profile {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: -50px;
+  left: 110px;
+}
+
 .card-profile {
-  border: 1px solid #989898;
+  // border: 1px solid #989898;
   background: white;
   border-radius: 4px;
-  margin: 20px 20px;
+  margin: 85px 20px;
   height: 100%;
   width: 100%;
   text-align: center;
   padding: 30px 25px;
-  box-shadow: 3px 8px 10px #888888;
+  box-shadow: 2px 5px 6px #888888;
   position: relative;
 }
 
