@@ -5,6 +5,7 @@
     </div>
     <h3>Welcome <%= @user.username %></h3>
   </div>
+
   <div class="rankings-container">
     <div class="ranking-card margin-ranking-card ">
       <h3>My ranking</h3>
@@ -17,14 +18,16 @@
     </div>
     <div class="ranking-card margin-ranking-card">
       <h3>Challenges done</h3>
-      <h4>5</h4>
+      <h4><%= @challenges_done.count %></h4>
     </div>
     <div class="ranking-card">
       <h3>Optional challenges done</h3>
       <h4>3</h4>
     </div>
   </div>
+
   <div class="bottom-box">
+
     <div class="half-bottom margin-ranking-card half-bottom-left">
       <h3>Done challenges</h3>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -49,9 +52,10 @@
         </a>
       </div>
     </div>
+
     <div div class="half-bottom half-bottom-right">
       <h1>Next challenge:</h1>
-      <%= Challenge.last.title %>
+      <%= @challenge.challenge.title %>
     </div>
   </div>
 </div>
