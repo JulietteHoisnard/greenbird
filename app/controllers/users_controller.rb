@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   def show
     @challenges_done = ChallengeUser.where(completed: true)
     # with the above line you can access and use data from the challenges the user has completed
-    @challenges = @user.challenges
     @data = Hash.new
     CSV.foreach("db/co-emissions-per-capita.csv", headers: true) do |row|
       if row['Entity'] == 'World'
