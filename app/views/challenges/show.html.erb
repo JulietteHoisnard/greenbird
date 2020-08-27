@@ -1,29 +1,39 @@
-<div class="container">
-  <div class="box small-box challenge">
+<div class="container m-bottom">
+  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
     <div>
-      <h1><%= @challenge.call_to_action %></h1>
-      <h2><%= @challenge.description %></h2>
-      <h3><%= @challenge.link %></h3>
-      <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird" %>
+      <h3><%= @challenge.call_to_action %></h3>
+      <p><%= @challenge.description %></p>
+     <!-- <p><%= @challenge.link %></p> --><br>
+      <div btn-c-cta>
+        <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird" %>
+        <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
+      </div>
     </div>
   </div>
 
-  <div class="box">
-    <div class="small-box info-challenge">
-      <div>
-        <h1><%= @challenge.infobox_title %></h1>
-        <h2><%= @challenge.infobox_desc %></h2>
-        <h3><%= @challenge.infobox_link %></h3>
+  <div class="row d-flex">
+    <div class="col-6">
+      <div class="small-box info-challenge box ">
+        <div>
+          <h3><%= @challenge.infobox_title %></h3>
+          <p><%= @challenge.infobox_desc %></p><br>
+        </div>
+        <div class="button-read">
+             <%= link_to 'Read more', @challenge.infobox_link, target: "_blank", class: "link-color btn-green-bird-empty btn-medium-size" %>
+        </div><br>
+        <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird btn-medium-size" %>
       </div>
-      <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird" %>
+
     </div>
 
-    <div class="small-box data-challenge">
-      <h2>If I do this action everyday, my impact per year is:</h2>
-      <h1><%= @challenge.impact_co %> kg of CO2</h1>
-      <h2><%= @challenge.impact_level %> level</h2>
-      <h2><%= @challenge.impact_money %> €</h2>
-      <h2>Main impacts: <%= @challenge.impact_desc %></h2>
+    <div class="col-6">
+      <div class="small-box data-challenge box">
+        <p><strong>If I do this action everyday, my impact per year is:</strong></p>
+        <h3><strong><%= @challenge.impact_co %> kg of CO2</strong></h3>
+        <p>Level: <%= @challenge.impact_level %></p>
+        <p>Yearly savings: <%= @challenge.impact_money %> €</p>
+        <p>Main impacts: <%= @challenge.impact_desc %></p>
+      </div>
 
     </div>
   </div>
