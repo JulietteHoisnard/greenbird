@@ -1,6 +1,5 @@
 .top-banner {
   text-align: center;
-  border: solid #8CC34A 1px;
   position: relative;
   margin: 50px 0 20px 0;
   padding: 35px 0 0 0;
@@ -16,7 +15,6 @@
 
 .ranking-card {
   padding: 20px;
-  border: solid #8CC34A 1px;
   background: white;
   border-radius: 4px;
   width: 200px;
@@ -32,6 +30,7 @@
 .bottom-box {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 70px;
 }
 
 // similar to class small-box in clallenges _show
@@ -45,7 +44,6 @@
 }
 
 .half-bottom-left {
-  border: solid #8CC34A 1px;
   background: white;
   color: black;
 

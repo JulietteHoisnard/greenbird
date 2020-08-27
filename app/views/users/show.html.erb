@@ -21,82 +21,67 @@
           <div class="card-buttons">
             <%= link_to 'Edit profile', edit_user_path, class: "link-color btn-green-bird" %>
           </div>
-        </div>
+        </div>        
       </div>
-
     </div>
-
     <div class="col-sm-8">
-      <div>
-        <h2 style="text-align:center">Badges</h2>
-      </div>
-
-
-      <div class="d-flex flex-wrap justify-content-space-between">
-        <div class="p-2 bd-highlight">
-         <div class="card-badge">
-          <%= image_tag "badge1.png", class:"earth-logo" %>
+      <div class="row">
+        <div class="card-achievement">
           <div class="card-body">
-            <h4 class="card-title" style="text-align:center">Yay</h4>
+            <h4 class="card-title">
+            <%= line_chart [
+              {name: @user.country, data: @datauser},
+              {name: "World", data: @data}
+            ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#8CC34A", "#FBA870"], id: "users-chart", width: "550px", height: "300px"%>
+            </h4>
+            <p class="card-text">Graph Description</p>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-        <div class="p-2 bd-highlight">
-          <div class="card-badge">
-            <div class="card-body">
-          <%= image_tag "badge5.png", class:"earth-logo" %>
-              <h4 class="card-title">Yay</h4>
-            </div>
-          </div>
-        </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card-container d-flex">
+        <div class="card-badges">
+          <div class="">
+            <div class="row description justify-content-center">
+              <div class="col-xl-12">
+                <p>My badges</p>
+                <div class="list-badges">
+                  <div class="card-badge d-flex justify-content-start">
+                    <%= image_tag "badge1.png", class:"earth-logo" %>
+                    <p class="card-title-badge">You achieved your first challenge!</p>
+                  </div>
 
-        <div class="p-2 bd-highlight">
-          <div class="card-badge">
-            <div class="card-body">
-          <%= image_tag "flame.jpg", class:"earth-logo" %>
-              <h4 class="card-title">Yay</h4>
-            </div>
-          </div>
-        </div>
+                  <div class="card-badge d-flex justify-content-start">
+                    <%= image_tag "badge5.png", class:"earth-logo" %>
+                    <p class="card-title-badge">You achieved 5 challenges!</p>
+                  </div>
 
-         <div class="p-2 bd-highlight">
-          <div class="card-badge">
-            <div class="card-body">
-          <%= image_tag "coupe.png", class:"earth-logo" %>
-              <h4 class="card-title">Yay</h4>
-            </div>
-          </div>
-        </div>
+                  <div class="card-badge d-flex justify-content-start">
+                    <%= image_tag "flame.jpg", class:"earth-logo" %>
+                    <p class="card-title-badge">Badge not yet obtained</p>
+                  </div>
 
-          <div class="p-2 bd-highlight">
-          <div class="card-badge">
-            <div class="card-body">
-              <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
-              <h4 class="card-title">Yay</h4>
-            </div>
-          </div>
-        </div>
+                  <div class="card-badge d-flex justify-content-start">
+                    <%= image_tag "coupe.png", class:"earth-logo" %>
+                    <p class="card-title-badge">Badge not yet obtained</p>
+                  </div>
 
-      </div>
+                  <div class="card-badge d-flex justify-content-start">
+                    <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
+                    <p class="card-title-badge">Badge not yet obtained</p>
+                  </div>
 
-        <h2 style="text-align:center">Achievements</h2>
-            <div class="row">
-            <div class="card-achievement">
-              <div class="card-body">
-                <h4 class="card-title">
-                  <%= line_chart [
-                    {name: @user.country, data: @datauser},
-                    {name: "World", data: @data}
-                  ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#b00", "#666"], id: "users-chart", width: "500px", height: "350px"%>
-                </h4>
-                <p class="card-text">Graph Description</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
     </div>
-
-
   </div>
 </div>
 
