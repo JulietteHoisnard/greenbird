@@ -37,7 +37,7 @@
          <div class="card-badge">
           <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
           <div class="card-body">
-            <h7 class="card-title" style="text-align:center">Yay</h7>
+            <h4 class="card-title" style="text-align:center">Yay</h4>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
           <div class="card-badge">
             <div class="card-body">
               <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
-              <h7 class="card-title">Yay</h7>
+              <h4 class="card-title">Yay</h4>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
           <div class="card-badge">
             <div class="card-body">
               <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
-              <h7 class="card-title">Yay</h7>
+              <h4 class="card-title">Yay</h4>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
           <div class="card-badge">
             <div class="card-body">
               <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
-              <h7 class="card-title">Yay</h7>
+              <h4 class="card-title">Yay</h4>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@
           <div class="card-badge">
             <div class="card-body">
               <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
-              <h7 class="card-title">Yay</h7>
+              <h4 class="card-title">Yay</h4>
             </div>
           </div>
         </div>
@@ -84,7 +84,12 @@
             <div class="row">
             <div class="card-achievement">
               <div class="card-body">
-                <h7 class="card-title">Graph Here</h7>
+                <h4 class="card-title">
+                  <%= line_chart [
+                    {name: @user.country, data: [5, 4, 3, 2, 1]},
+                    {name: "World", data: [1, 2, 3, 4, 5]}
+                  ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#b00", "#666"], id: "users-chart", width: "300px", height: "200px"%>
+                </h4>
                 <p class="card-text">Graph Description</p>
               </div>
             </div>
