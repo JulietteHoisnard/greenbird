@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :challenges do
-    resources :challenge_users, only: [:new, :create]
+    resources :challenge_users, only: [:new, :create, :update]
   end
   resources :users, only: [:show, :edit, :update]
   get 'users/:id/dashboard', to: 'users#dashboard', as: 'dashboard'
