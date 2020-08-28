@@ -6,8 +6,14 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    @instance = ChallengeUser.where(user_id: current_user.id, challenge_id: @challenge.id).first
-    # the above line makes @instance.completed accessible
+    @user = current_user
+
+    @user.challenges = Challenge.all
+
+    @challenges_todo = ChallengeUser.where(user_id: current_user.id, completed: false)
+
+    @instance = @challenges_todo.first
+    # the above line makes @instance attributes accessible
 
   end
 
