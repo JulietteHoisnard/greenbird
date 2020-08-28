@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
 
     @challenge = @challenges_todo.first
-
-    @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)
   end
 
   def show

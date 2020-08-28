@@ -21,11 +21,7 @@
         <div class="button-read">
              <%= link_to 'Read more', @challenge.infobox_link, target: "_blank", class: "link-color btn-green-bird-empty btn-medium-size" %>
         </div><br>
-        <% if @instance.opt_completed %>
-          <%= link_to "You've already completed this optional challenge!", @challenge, class: "link-color btn-green-bird btn-medium-size" %>
-        <% else %>
-          <%= link_to 'Optional challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, class: "link-color btn-green-bird btn-medium-size" %>
-        <% end %>
+        <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird btn-medium-size" %>
       </div>
 
     </div>
