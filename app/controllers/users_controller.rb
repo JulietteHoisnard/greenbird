@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   def dashboard
     @user.challenges = Challenge.all
 
-    @challenges_todo = ChallengeUser.where(user_id: current_user.id, completed: false)
-    @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true)
+    @challenges_todo = ChallengeUser.where(user_id: current_user.id, completed: false).order(:challenge_id)
+    @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
 
     @challenge = @challenges_todo.first
   end
