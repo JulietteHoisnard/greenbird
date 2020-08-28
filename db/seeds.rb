@@ -18,11 +18,11 @@ one = Challenge.create(
   description: "Riding a bike accounts for about 21g of CO2 emissions per kilometer, which is more than ten times less than a car.",
   # photo
   link: "https://www.sciencedirect.com/science/article/pii/S0048969717301559",
-  category: "move",
+  category: "Move",
   infobox_title: "Read more about benefits of cycling",
   infobox_desc: "Envrionmental benefits but not only!",
-  infobox_link: "https://www.sciencedirect.com/science/article/pii/S0048969717301559",
-  impact_level: "medium",
+  infobox_link: "https://ecf.com/news-and-events/news/how-much-co2-does-cycling-really-save",
+  impact_level: "Medium",
   impact_co: 1000,
   impact_money: 10000,
   impact_desc: "air pollution, noise pollution, health, respiratory diseases"
@@ -40,11 +40,11 @@ two = Challenge.create(
   description: "Meat lovers have the highest carbon footprint at 3.3 tons of greenhouse gas emissions. A vegan diet has the lowest carbon footprint at just 1.5 tons CO2e (Carbon Dioxide Equivalent). You can reduce your foodprint by a quarter just by cutting down on red meats such as beef and lamb.",
   #photo
   link: "https://www.bbcgoodfood.com/recipes/collection/quick-veggie",
-  category: "eat",
+  category: "Eat",
   infobox_title: "infobox_title",
   infobox_desc: "infobox_desc",
   infobox_link:"https://www.healthline.com/health/becoming-vegetarian#types",
-  impact_level: "medium",
+  impact_level: "Medium",
   impact_co: 1325,
   impact_money: 300,
   impact_desc: "Discover more about vegetarianism"
@@ -62,11 +62,11 @@ three = Challenge.create(
   description: "Plastic is a non-biodegradable material and can take up to 2000 years to decompose. It ends up in oceans and in the stomachs of many animals. Totally getting rid of the use of plastic will save 60-100 million barrels of oil and slow the depletion of this valuable natural resource.",
   # photo
   link: "https://www.eartheclipse.com/environment/serious-effects-plastic-bags.html",
-  category: "live",
+  category: "Live",
   infobox_title: "Read more about benefits of recycling",
   infobox_desc: "Environmental benefits but also a lifestyle benefit!",
   infobox_link: "https://www.who.int/globalchange/publications/factsheets/Kit2008_annex1_2.pdf?ua=1",
-  impact_level: "medium",
+  impact_level: "Medium",
   impact_co: 210,
   impact_money: 100,
   impact_desc: "Discover alternatives to plastic"
@@ -84,11 +84,11 @@ four = Challenge.create(
  emissions. One dryer load uses 5 times more electricity than washing – by simply line-drying your clothes, you can save 1/3 of their carbon footprint. Drying clothes naturally is by far the best way to do it: your clothes will last longer and the energy provided is free and non-polluting.",
   # photo
   link: "https://www.huffpost.com/entry/7-instant-ways-to-reduce-your-carbon-footprint_b_59321992e4b00573ab57a383",
-  category: "live",
+  category: "Live",
   infobox_title: "Make your clothes last longer and save energy",
   infobox_desc: "Small but mighty changes",
   infobox_link: "https://www.theguardian.com/environment/green-living-blog/2010/nov/25/carbon-footprint-load-laundry",
-  impact_level: "medium",
+  impact_level: "Medium",
   impact_co: 210,
   impact_money: 100,
   impact_desc: "electricity, energy"
@@ -105,11 +105,11 @@ five = Challenge.create(
   description: "I will take steps towards living a minimal lifestyle to evaluate, declutter, and practice conscious purchasing.",
   # photo
   link: "https://link.springer.com/article/10.1007/s41042-020-00030-y",
-  category: "live",
+  category: "Live",
   infobox_title: "Quality over quantity",
   infobox_desc: "Minimalize Waster with a Minimalist Lifestyle",
-  infobox_link: "https://www.centerforecotechnology.org/minimize-waste-with-a-minimalist-lifestyle/",
-  impact_level: "medium",
+  infobox_link: "https://minimalismfilm.com/",
+  impact_level: "Medium",
   impact_co: 100,
   impact_money: 100,
   impact_desc: "sustainable lifestyle"
