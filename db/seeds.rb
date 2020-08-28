@@ -41,8 +41,8 @@ two = Challenge.create(
   #photo
   link: "https://www.bbcgoodfood.com/recipes/collection/quick-veggie",
   category: "Eat",
-  infobox_title: "infobox_title",
-  infobox_desc: "infobox_desc",
+  infobox_title: "Read more about being a vegetarian",
+  infobox_desc: "There are many different options when it comes to consuming less meat",
   infobox_link:"https://www.healthline.com/health/becoming-vegetarian#types",
   impact_level: "medium",
   impact_co: 1325,
