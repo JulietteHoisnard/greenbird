@@ -7,7 +7,11 @@
       <!-- <a class="btn-green-bird" href="#">Sign up</a> -->
       <%= link_to "Sign up", new_user_registration_path, class: "btn-green-bird" %>
       <!-- <a class="btn-green-bird" href="#">Take me to the first challenge</a> -->
-      <%= link_to "Take me to the first challenge", challenge_path(@challenge), class: "btn-green-bird" %>
+      <% if @challenge %>
+        <%= link_to "Take me to the first challenge", challenge_path(@challenge), class: "btn-green-bird" %>
+      <% else %>
+        <%= link_to "Look at your achievements", user_path(@user), class: "btn-green-bird" %>
+      <% end %>
     </div>
     
   </div>
