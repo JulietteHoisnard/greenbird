@@ -9,7 +9,7 @@
       <!-- <a class="btn-green-bird" href="#">Take me to the first challenge</a> -->
       <% if @challenge %>
         <%= link_to "Take me to the first challenge", challenge_path(@challenge), class: "btn-green-bird" %>
-      <% else %>
+      <% elsif @user %>
         <%= link_to "Look at your achievements", user_path(@user), class: "btn-green-bird" %>
       <% end %>
     </div>
