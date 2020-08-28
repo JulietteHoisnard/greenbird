@@ -1,26 +1,43 @@
 .top-banner {
   text-align: center;
   position: relative;
-  margin: 50px 0 20px 0;
+  margin: 70px 0 20px 0;
   padding: 35px 0 0 0;
   background: white;
   border-radius: 4px;
-  box-shadow: 3px 8px 10px #888888;
+  height: 100px;
+  // box-shadow: 3px 8px 10px #888888;
+}
+
+.number {
+  font-size: 40px;
+  color: white;
+}
+
+.circle-nr {
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  background-color: #8dc34a;
+  margin-left: 75px;
 }
 
 .rankings-container {
+  margin: 30px 0 5px 0;
   display: flex;
   justify-content: space-between;
 }
 
 .ranking-card {
-  padding: 20px;
+  height: 200px;
+  padding: 50px 20px 50px 20px;
   background: white;
   border-radius: 4px;
-  width: 200px;
+  width: 170px;
   flex: 1 0 auto;
   text-align: center;
-  box-shadow: 3px 8px 10px #888888;
+  vertical-align: sub;
+  // box-shadow: 3px 8px 10px #888888;
 }
 
 .margin-ranking-card {
@@ -61,13 +78,6 @@
 }
 
 .avatar-banner {
-  // position: absolute;
-  // top: -35px;
-  box-shadow: 3px 8px 10px #888888;
-}
-
-.top-text {
-  position: absolute;
-  top: -20px;
-  left: 10px;
+  border: 5px solid white;
+ 
 }
