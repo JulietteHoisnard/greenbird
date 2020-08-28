@@ -8,4 +8,8 @@ class ChallengeUserPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def update_opt?
+    record.user == user
+  end
 end
