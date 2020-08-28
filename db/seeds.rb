@@ -12,7 +12,7 @@ Challenge.destroy_all
 
 puts "Creating challenges..."
 
-one = Challenge.create(
+one = Challenge.create!(
   title: "Commute by Bike",
   call_to_action: "I commute by bike today whether going to work, sports, or shopping, etc.",
   description: "Riding a bike accounts for about 21g of CO2 emissions per kilometer, which is more than ten times less than a car.",
@@ -22,7 +22,7 @@ one = Challenge.create(
   infobox_title: "Read more about benefits of cycling",
   infobox_desc: "Envrionmental benefits but not only!",
   infobox_link: "https://ecf.com/news-and-events/news/how-much-co2-does-cycling-really-save",
-  impact_level: "Medium",
+  impact_level: "medium",
   impact_co: 1000,
   impact_money: 10000,
   impact_desc: "air pollution, noise pollution, health, respiratory diseases"
@@ -41,10 +41,10 @@ two = Challenge.create(
   #photo
   link: "https://www.bbcgoodfood.com/recipes/collection/quick-veggie",
   category: "Eat",
-  infobox_title: "infobox_title",
-  infobox_desc: "infobox_desc",
+  infobox_title: "Read more about being a vegetarian",
+  infobox_desc: "There are many different options when it comes to consuming less meat",
   infobox_link:"https://www.healthline.com/health/becoming-vegetarian#types",
-  impact_level: "Medium",
+  impact_level: "medium",
   impact_co: 1325,
   impact_money: 300,
   impact_desc: "Discover more about vegetarianism"
@@ -66,7 +66,7 @@ three = Challenge.create(
   infobox_title: "Read more about benefits of recycling",
   infobox_desc: "Environmental benefits but also a lifestyle benefit!",
   infobox_link: "https://www.who.int/globalchange/publications/factsheets/Kit2008_annex1_2.pdf?ua=1",
-  impact_level: "Medium",
+  impact_level: "medium",
   impact_co: 210,
   impact_money: 100,
   impact_desc: "Discover alternatives to plastic"
@@ -88,7 +88,7 @@ four = Challenge.create(
   infobox_title: "Make your clothes last longer and save energy",
   infobox_desc: "Small but mighty changes",
   infobox_link: "https://www.theguardian.com/environment/green-living-blog/2010/nov/25/carbon-footprint-load-laundry",
-  impact_level: "Medium",
+  impact_level: "medium",
   impact_co: 210,
   impact_money: 100,
   impact_desc: "electricity, energy"
@@ -109,7 +109,7 @@ five = Challenge.create(
   infobox_title: "Quality over quantity",
   infobox_desc: "Minimalize Waster with a Minimalist Lifestyle",
   infobox_link: "https://minimalismfilm.com/",
-  impact_level: "Medium",
+  impact_level: "medium",
   impact_co: 100,
   impact_money: 100,
   impact_desc: "sustainable lifestyle"

@@ -1,5 +1,5 @@
 <div class="container m-bottom">
-  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
+  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.photo.key, height: 400, width: 1200, crop: :fill %>');">
     <div>
       <h3><%= @challenge.call_to_action %></h3>
       <p><%= @challenge.description %></p>
@@ -21,7 +21,11 @@
         <div class="button-read">
              <%= link_to 'Read more', @challenge.infobox_link, target: "_blank", class: "link-color btn-green-bird-empty btn-medium-size" %>
         </div><br>
-        <%= link_to 'Challenge done!', dashboard_path(current_user), class: "link-color btn-green-bird btn-medium-size" %>
+        <% if @instance.opt_completed %>
+          <%= link_to "You've already completed this optional challenge!", @challenge, class: "link-color btn-green-bird btn-medium-size" %>
+        <% else %>
+          <%= link_to 'Optional challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, class: "link-color btn-green-bird btn-medium-size" %>
+        <% end %>
       </div>
 
     </div>
