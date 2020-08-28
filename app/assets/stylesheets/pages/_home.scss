@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+
+.arrow-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+
+@-webkit-keyframes downarrow {
+  0% { transform: translateY(0); opacity: 0.4 }
+  100% { transform: translateY(0.4em) }
+}
+
+.arrow {
+  border-color:transparent;
+  border-style:solid;
+  border-width:0 2em;
+  display:block;
+  height:0;
+  margin:10em auto;
+  opacity:0.4;
+  text-indent:-9999px;
+  transform-origin: 50% 50%;
+  width:0;
+}
+
+.down {
+  animation: downarrow 0.6s infinite alternate ease-in-out;
+  border-top:2em solid #8CC34A;
+}
+
+#scrollhint {
+  position: absolute;
+  top: -300px;
+}

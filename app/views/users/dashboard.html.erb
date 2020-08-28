@@ -53,15 +53,18 @@
       </div>
     </div>
 
-    <div div class="half-bottom half-bottom-right", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 300, width: 400, crop: :fill %>')">
-      <% if @challenge %>
+    <% if @challenge %>
+
+      <div div class="half-bottom half-bottom-right", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 300, width: 400, crop: :fill %>')">
         <%= link_to challenge_path(@challenge.challenge) do %>
           <h1>Next challenge:</h1>
           <%= @challenge.challenge.title %>
         <% end %>
-      <% else %>
+      </div>
+    <% else %>
+      <div div class="half-bottom half-bottom-right">
         <h3>Stay tuned for more challenges!</h3>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
