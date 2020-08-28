@@ -1,5 +1,5 @@
 <% content_for(:navbar_class, "navbar-home" ) %>
-<div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("banner-greenbird.jpg") %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("banner-greenbird.jpg") %>);">
   <div class="container">
     <h1><strong>Easy challenges for environmental positive impact</strong></h1>
     <p>Reduce your CO2 footprint on <strong>easy</strong> and <strong>fun</strong> way</p>
@@ -13,6 +13,12 @@
         <%= link_to "Look at your achievements", user_path(@user), class: "btn-green-bird" %>
       <% end %>
     </div>
+    
+  </div>
+</div>
+<div class="arrow-container">
+  <div id="scrollhint">
+    <a href="#" class="arrow down" onclick="scrollDown(event)">Scrolldown</a>
   </div>
 </div>
 
@@ -68,3 +74,9 @@
 
 </div>
 
+<script>
+  function scrollDown(e) {
+    e.preventDefault()
+    document.querySelector("div.container:nth-child(4)").scrollIntoView({behavior: "smooth"});
+  }
+</script>
