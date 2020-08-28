@@ -59,7 +59,7 @@ puts "Challenge #{two.title} created!"
 three = Challenge.create(
   title: "Reduce Single-Use Plastic",
   call_to_action: "I bring my own bag and avoid plastic.",
-  description: "",
+  description: "Plastic is a non-biodegradable material and can take up to 2000 years to decompose. It ends up in oceans and in the stomachs of many animals. Totally getting rid of the use of plastic will save 60-100 million barrels of oil and slow the depletion of this valuable natural resource.",
   # photo
   link: "https://www.eartheclipse.com/environment/serious-effects-plastic-bags.html",
   category: "live",
