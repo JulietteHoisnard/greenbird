@@ -10,7 +10,7 @@ class ChallengesController < ApplicationController
 
     @user.challenges = Challenge.all
 
-    @challenges_todo = ChallengeUser.where(user_id: current_user.id, completed: false)
+    @challenges_todo = ChallengeUser.where(user_id: current_user.id, completed: false).order(:challenge_id)
 
     @instance = @challenges_todo.first
     # the above line makes @instance attributes accessible
