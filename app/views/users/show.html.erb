@@ -2,31 +2,32 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="card-container d-flex">
-        <div class="card-profile">
+        <div class="card-profile shadow">
           <%=cl_image_tag @user.avatar_url,:class=>"avatar-user-profile", crop: :fill%>
           <div class="card-body">
             <div class="row description justify-content-center">
               <div class="col-xl-12 text-center">
-                <h4><%= @user.username %></h4>
+                <p><strong><%= @user.username %></strong></p>
+                <hr class="w-75">
                 <p>My Country:</p>
-                <h4><%= @user.country %> <% if @user.country != 'World' %>
+                <p class="p-user"><%= @user.country %> <% if @user.country != 'World' %>
                     <%= ISO3166::Country.find_country_by_name(@user.country).emoji_flag %>
                     <% end %>
-                </h4>
+                </p>
                 <p>My Bio:</p>
-                <h4 class="margin-button-edit"><%= @user.bio %></h4>
+                <p class="margin-button-edit p-user"><%= @user.bio %></p>
               </div>
             </div>
           </div>
           <div class="card-buttons">
             <%= link_to 'Edit profile', edit_user_path, class: "link-color btn-green-bird" %>
           </div>
-        </div>        
+        </div>
       </div>
     </div>
     <div class="col-sm-8">
       <div class="row">
-        <div class="card-achievement">
+        <div class="card-graph shadow">
           <div class="card-body">
             <h4 class="card-title">
             <%= line_chart [
@@ -44,11 +45,12 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="card-container d-flex">
-        <div class="card-badges">
+        <div class="card-badges shadow">
           <div class="">
             <div class="row description justify-content-center">
               <div class="col-xl-12">
-                <p>My badges</p>
+                <p><strong>My badges</strong></p>
+                <hr class="w-75">
                 <div class="list-badges">
                   <div class="card-badge d-flex justify-content-start">
                     <%= image_tag "badge1.png", class:"earth-logo" %>
@@ -60,23 +62,55 @@
                     <p class="card-title-badge">You achieved 5 challenges!</p>
                   </div>
 
-                  <div class="card-badge d-flex justify-content-start">
+                  <div class="card-badge opacity d-flex justify-content-start">
                     <%= image_tag "flame.jpg", class:"earth-logo" %>
                     <p class="card-title-badge">Badge not yet obtained</p>
                   </div>
 
-                  <div class="card-badge d-flex justify-content-start">
+                  <div class="card-badge opacity d-flex justify-content-start">
                     <%= image_tag "coupe.png", class:"earth-logo" %>
                     <p class="card-title-badge">Badge not yet obtained</p>
                   </div>
 
-                  <div class="card-badge d-flex justify-content-start">
+                  <div class="card-badge opacity d-flex justify-content-start">
                     <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
                     <p class="card-title-badge">Badge not yet obtained</p>
                   </div>
 
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 no-p">
+      <div class="friends-section shadow">
+        <p><strong>My friends</strong></p>
+        <hr class="w-75">
+        <div class="row mt-3 px-3">
+          <div class="col-3 friend-card">
+            <div>
+              <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U0165E3CGQN-f7b61d146c95-512" alt="">
+            <p>Tina</p>
+            </div>
+          </div>
+          <div class="col-3 friend-card">
+            <div>
+               <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U016AQHF6TF-7d8204dc04a9-512" alt="">
+            <p>Žužu</p>
+            </div>
+          </div>
+          <div class="col-3 friend-card">
+            <div>
+              <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U016JBJPLQL-01d9433a7fea-512" alt="">
+            <p>Rowena</p>
+            </div>
+          </div>
+          <div class="col-3 friend-card">
+            <div>
+              <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U0165E3MWT0-e3bb75012008-512" alt="">
+            <p>David</p>
             </div>
           </div>
         </div>
