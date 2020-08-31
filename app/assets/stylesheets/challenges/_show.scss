@@ -2,6 +2,7 @@
   color:white;
   height: 350px;
   margin-top: 20px !important;
+  position: relative;
 }
 
 .box-challenge > p {
@@ -68,4 +69,13 @@ h3 {
   color: white;
   text-decoration: none;
   border: 1px solid #8CC34A;
+}
+
+.tag {
+  position: absolute;
+  color: white;
+  top: 20px;
+  right: 20px;
+  padding: 1px 8px;
+  border-radius: 4px;
 }
