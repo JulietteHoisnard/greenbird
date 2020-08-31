@@ -9,6 +9,9 @@
         <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, class: "link-color btn-green-bird" %>
       </div>
     </div>
+    <div class="tag <%=@classtagcolor %>" >
+      <%= @challenge.category %>
+    </div>
   </div>
 
   <div class="row d-flex justify-content-around">
