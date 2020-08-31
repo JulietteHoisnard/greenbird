@@ -15,6 +15,21 @@ class ChallengesController < ApplicationController
     @instance = @challenges_todo.first
     # the above line makes @instance attributes accessible
 
+
+    case @challenge.category
+    when "home"
+      @classtagcolor = "tag_home"
+    when "zero waste"
+      @classtagcolor = "tag_zero_waste"
+    when "transport"
+      @classtagcolor = "tag_transport"
+    when "food"
+      @classtagcolor = "tag_food"
+    when "civic action"
+      @classtagcolor = "tag_civic_action"
+    else
+      "error in label name"
+    end
   end
 
   def new
@@ -48,23 +63,6 @@ class ChallengesController < ApplicationController
     @challenge.destroy
     redirect_to challenges_path
   end
-
-  # def label
-  #   case @challenge.category
-  #   when "home"
-  #     @tagcolor = "8CC34A"
-  #   when "zero waste"
-  #     @tagcolor = "FBA870"
-  #   when "transport"
-  #     @tagcolor = 
-  #   when "food"
-  #     @tagcolor = 
-
-  #   else
-  #     "Error: capacity has an invalid value (#{capacity})"
-  #   end
-  #   if @challenge
-  # end
 
   private
 
