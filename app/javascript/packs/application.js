@@ -48,21 +48,4 @@ document.addEventListener('turbolinks:load', () => {
             tr.hide();
     });
 });
-
-
 // Chart
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
