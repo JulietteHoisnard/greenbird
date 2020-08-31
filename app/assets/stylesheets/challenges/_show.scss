@@ -34,6 +34,15 @@
   vertical-align: sub;
 }
 
+.small-box-hover {
+  background: white;
+  border: solid #8CC34A 2px;
+  border-radius: 4px;
+  height: 100px;
+  margin: 4px;
+  text-align: center;
+}
+
 .info-challenge {
 
 }
@@ -68,6 +77,22 @@ h2 {
 }
 
 .btn-green-bird-empty:hover {
+  background: #8CC34A;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #8CC34A;
+}
+
+.btn-green-bird-hover {
+  color: #8CC34A;
+  padding: 15px 70px;
+  border: 1px solid #8CC34A;
+  border-radius: 4px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.btn-green-bird-hover:hover {
   background: #8CC34A;
   color: white;
   text-decoration: none;
