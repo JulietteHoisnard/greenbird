@@ -14,14 +14,14 @@
   <div class="row d-flex justify-content-around">
 
     <div class="col-4 d-flex justify-content-center">
-      <div class="btn-green-bird-hover">
+      <div class="btn-green-bird-hover infobox">
         Learn more
       </div>
 
     </div>
 
     <div class="col-4 d-flex justify-content-center">
-      <div class="btn-green-bird-hover">
+      <div class="btn-green-bird-hover databox">
         Your impact
       </div>
 
@@ -32,7 +32,7 @@
 
   <div class="row d-flex">
     <div class="col-6">
-      <div class="small-box info-challenge box ">
+      <div class="small-box info-challenge box">
         <div>
           <h3><%= @challenge.infobox_title %></h3>
           <p><%= @challenge.infobox_desc %></p><br>
@@ -63,3 +63,5 @@
 
 
 </div>
+
+<%= javascript_pack_tag 'challenge-show' %>
