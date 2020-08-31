@@ -5,7 +5,7 @@
       <p><%= @challenge.description %></p>
      <!-- <p><%= @challenge.link %></p> --><br>
       <div btn-c-cta>
-        <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, class: "link-color btn-green-bird" %>
+        <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, id: "sweet-alert-demo", class: "link-color btn-green-bird"%>
         <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
       </div>
     </div>
@@ -24,7 +24,7 @@
         <% if @instance.opt_completed %>
           <%= link_to "You've already completed this optional challenge!", @challenge, class: "link-color btn-green-bird btn-medium-size" %>
         <% else %>
-          <%= link_to 'Optional challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, class: "link-color btn-green-bird btn-medium-size" %>
+          <%= link_to 'Optional challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
         <% end %>
       </div>
 
