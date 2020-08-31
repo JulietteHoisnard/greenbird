@@ -34,6 +34,15 @@ class UsersController < ApplicationController
       end
     end
     p @datauser
+    @datachallengeuser = Hash.new
+    CSV.foreach("db/co-emissions-per-capita.csv", headers: true) do |row|
+      if row['Entity'] == @user.country
+        if row['Year'].to_i >= 1950
+          @datauser[row['Year']] = row['Per capita CO₂ emissions (tonnes)']
+        end
+      end
+    end
+    p @datauser
     @badge1 = "https://image.flaticon.com/icons/svg/814/814513.svg"
   end
 

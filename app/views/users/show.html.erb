@@ -33,7 +33,7 @@
             <%= line_chart [
               {name: @user.country, data: @datauser},
               {name: "World", data: @data}
-            ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#8CC34A", "#FBA870"], id: "users-chart", width: "550px", height: "300px"%>
+            ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#8CC34A", "#FBA870"], id: "users-chart", width: "550px", height: "300px", points: false%>
             </h4>
             <p class="card-text">Graph Description</p>
           </div>
