@@ -36,32 +36,36 @@
 
   <div class="bottom-box">
 
-    <% if @challenges_done %>
+    <% if @challenges_done != [] %>
 
         <div id="carouselExampleControls" class="half-bottom-caroussel shadow margin-ranking-card carousel slide" data-ride="carousel">
 
           <div class="carousel-inner shadow">
             <div class="carousel-item active">
               <img src="<%= cl_image_path @challenges_done.first.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block align-middle">
-                <h2>Done challenge:</h2>
-                <h4><%= @challenges_done.first.challenge.title %></h4>
-              </div>
-              <div class="tag <%="tag_#{@challenges_done.first.challenge.category.split(' ').join('_')}" %>" >
-                <%= @challenges_done.first.challenge.category %>
-              </div>
+              <%= link_to challenge_path(@challenges_done.first.challenge) do %>
+                <div class="carousel-caption d-none d-md-block align-middle">
+                  <h2>Done challenge:</h2>
+                  <h4><%= @challenges_done.first.challenge.title %></h4>
+                </div>
+                <div class="tag <%="tag_#{@challenges_done.first.challenge.category.split(' ').join('_')}" %>" >
+                  <%= @challenges_done.first.challenge.category %>
+                </div>
+              <% end %>
             </div>
 
                 <% @challenges_done[1..].each do |challenge| %>
                 <div class="carousel-item">
                   <img src="<%= cl_image_path challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block align-middle">
-                    <h2>Done challenge:</h2>
-                    <h4><%= challenge.challenge.title %></h4>
-                  </div>
-                  <div class="tag <%="tag_#{challenge.challenge.category.split(' ').join('_')}" %>" >
-                    <%= challenge.challenge.category %>
-                  </div>
+                  <%= link_to challenge_path(challenge.challenge) do %>
+                    <div class="carousel-caption d-none d-md-block align-middle">
+                      <h2>Done challenge:</h2>
+                      <h4><%= challenge.challenge.title %></h4>
+                    </div>
+                    <div class="tag <%="tag_#{challenge.challenge.category.split(' ').join('_')}" %>" >
+                      <%= challenge.challenge.category %>
+                    </div>
+                  <% end %>
                 </div>
                 <% end %>
 
