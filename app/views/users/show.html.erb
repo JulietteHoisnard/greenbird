@@ -61,10 +61,17 @@
                 <p><strong>My badges</strong></p>
                 <hr class="w-75">
                 <div class="list-badges">
-                  <div class="card-badge d-flex justify-content-start">
-                    <%= image_tag "badge1.png", class:"earth-logo" %>
-                    <p class="card-title-badge">You achieved your first challenge!</p>
-                  </div>
+                  <% if @challenges_done.count >= 1 %>
+                    <div class="card-badge d-flex justify-content-start">
+                      <%= image_tag "badge1.png", class:"earth-logo" %>
+                      <p class="card-title-badge">You achieved your first challenge!</p>
+                  <% else %>
+                    <div class="card-badge opacity d-flex justify-content-start">
+                      <%= image_tag "badge1.png", class:"earth-logo" %>
+                      <p class="card-title-badge">Badge not yet obtained.</p>
+                  <% end %>
+                    </div>
+
 
                   <div class="card-badge d-flex justify-content-start">
                     <%= image_tag "badge5.png", class:"earth-logo" %>

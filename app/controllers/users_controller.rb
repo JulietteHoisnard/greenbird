@@ -15,7 +15,8 @@ class UsersController < ApplicationController
 
   def show
     @user.challenges = Challenge.all
-    @challenges_done = ChallengeUser.where(completed: true)
+    @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
+    raise
     # with the above line you can access and use data from the challenges the user has completed
     @data = Hash.new
     CSV.foreach("db/co-emissions-per-capita.csv", headers: true) do |row|
@@ -52,10 +53,6 @@ class UsersController < ApplicationController
       @datachallengeuser[counter] = co2
     end
     p @datachallengeuser
-
-
-
-    @badge1 = "https://image.flaticon.com/icons/svg/814/814513.svg"
   end
 
   def edit
