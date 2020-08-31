@@ -4,16 +4,18 @@
     <h1><strong>Easy challenges for positive environmental impact</strong></h1>
     <p>Reduce your CO2 footprint in an <strong>easy</strong> and <strong>fun</strong> way</p>
     <div class="buttons-div">
-      <!-- <a class="btn-green-bird" href="#">Sign up</a> -->
-      <%= link_to "Sign up", new_user_registration_path, class: "btn-green-bird" %>
-      <!-- <a class="btn-green-bird" href="#">Take me to the first challenge</a> -->
-      <% if @challenge %>
-        <%= link_to "Take me to the first challenge", challenge_path(@challenge), class: "btn-green-bird" %>
-      <% elsif @user %>
-        <%= link_to "Look at your achievements", user_path(@user), class: "btn-green-bird" %>
+      <!-- <%= link_to "Sign up", new_user_registration_path, class: "btn-green-bird" %> -->
+      <% if @user %>
+        <% if @challenge %>
+          <%= link_to "Continue your journey", challenge_path(@challenge), class: "btn-green-bird" %>
+        <% elsif @user %>
+          <%= link_to "Look at your achievements", user_path(@user), class: "btn-green-bird" %>
+        <% end %>
+      <% else %>
+        <%= link_to "Start your journey", challenge_path(@challenge), class: "btn-green-bird" %>
       <% end %>
     </div>
-    
+
   </div>
 </div>
 <div class="arrow-container">
@@ -24,30 +26,30 @@
 
 <div class="container">
   <div class="section">
-    <h2 style="text-align: center;" class="mb-3">How can I start?</h2>
+    <h2 style="text-align: center;" class="mb-3">How does it work?</h2>
     <div class="green-row"></div>
     <div class="row d-flex justify-content-space-between">
       <div class="col-sm-12 col-xl-3 card-lp">
         <h3># 1</h3>
-        <p>Do one fun and easy challenge every day</p>
+        <p>Do fun and easy challenges every day</p>
       </div>
       <div class="col-sm-12 col-xl-3 card-lp">
          <h3># 2</h3>
-         <p>Read interesting information about the challenges</p>
+         <p>Learn more about your impact on the environment and discover what else you can do</p>
       </div>
       <div class="col-sm-12 col-xl-3 card-lp">
          <h3># 3</h3>
-         <p>Get CO2 equivalent of your everyday actions</p>
+         <p>Watch as your carbon footprint shrinks</p>
       </div>
       <div class="col-sm-12 col-xl-3 card-lp">
          <h3># 4</h3>
-         <p>Share challenges with friends</p>
+         <p>Connect with friends and share challenges</p>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2 style="text-align: center;" class="mb-3">Why people love us!</h2>
+    <h2 style="text-align: center;" class="mb-3">Why people love us</h2>
 
     <div class="row d-flex justi">
 
