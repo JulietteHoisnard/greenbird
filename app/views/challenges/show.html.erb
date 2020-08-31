@@ -1,35 +1,52 @@
 <div class="container m-bottom">
-  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.photo.key, height: 450, width: 1200, crop: :fill %>');">
-    <div>
-      <h2><%= @challenge.call_to_action %></h2>
-      <p><%= @challenge.description %></p>
-      <br>
-      <div btn-c-cta>
+
+  <div class="d-flex box-challenge box" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.photo.key, height: 450, width: 1200, crop: :fill %>');">
+
+    <div class="container">
+
+      <div class="justify-content-center">
+        <h2><%= @challenge.call_to_action %></h2>
+      </div>
+
+      <div class="justify-content-center">
+        <p><%= @challenge.description %></p>
+        <br>
+      </div>
+
+      <div class="justify-content-center btn-c-cta">
         <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
         <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, id: "sweet-alert-demo", class: "link-color btn-green-bird" %>
       </div>
+
+<!-- the following div is empty on purpose; it's here for spacing purposes. please don't take it out -->
+      <div class="row my-4">
+        <p></p>
+      </div>
+
+      <div class="row d-flex justify-content-around mt-5">
+
+        <div class="col-4 d-flex justify-content-center">
+          <div class="btn-green-bird-hover infobox">
+            Learn more
+          </div>
+        </div>
+
+        <div class="col-4 d-flex justify-content-center">
+          <div class="btn-green-bird-hover databox">
+            Your impact
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
     <div class="tag <%=@classtagcolor %>" >
       <%= @challenge.category %>
     </div>
+
   </div>
 
-  <div class="row d-flex justify-content-around">
-
-    <div class="col-4 d-flex justify-content-center">
-      <div class="btn-green-bird-hover infobox">
-        Learn more
-      </div>
-
-    </div>
-
-    <div class="col-4 d-flex justify-content-center">
-      <div class="btn-green-bird-hover databox">
-        Your impact
-      </div>
-
-    </div>
-  </div>
 
 
 
