@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
     @challenge = @challenges_todo.first
 
-    @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)
+    @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)    
+
   end
 
   def show
@@ -68,6 +69,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :bio, :username, :country, :photo)
   end
