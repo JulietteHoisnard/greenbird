@@ -23,9 +23,9 @@ document.querySelector('.databox').addEventListener('click', (event) => {
   begone(document.querySelector('.databox'));
 });
 
-function hide (element) {
-  element.style.visibility = 'hidden';
-};
+// function hide (element) {
+//   element.style.visibility = 'hidden';
+// };
 
 function begone (element) {
   element.style.display = 'none';
