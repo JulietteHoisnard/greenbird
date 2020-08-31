@@ -29,12 +29,23 @@ require("chart.js")
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  //initSelect2();
+  initSweetalert('#sweet-alert-demo', {
+    title: "GOLD",
+    text: "You're well on your way to rockstar status!",
+    icon: "success",
+    button: "Aww, yes",
+    timer: 3000
+    },
+     function () {
+            location.reload(true);
+            tr.hide();
+    });
 });
-
 // Chart
-
-
