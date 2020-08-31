@@ -42,21 +42,26 @@
 
           <div class="carousel-inner shadow">
             <div class="carousel-item active">
-
-                <img src="<%= cl_image_path @challenges_done.first.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block align-middle">
-                  <h2>Done challenge:</h2>
-                  <h4><%= @challenges_done.first.challenge.title %></h4>
-                </div>
+              <img src="<%= cl_image_path @challenges_done.first.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block align-middle">
+                <h2>Done challenge:</h2>
+                <h4><%= @challenges_done.first.challenge.title %></h4>
+              </div>
+              <div class="tag <%="tag_#{@challenges_done.first.challenge.category.split(' ').join('_')}" %>" >
+                <%= @challenges_done.first.challenge.category %>
+              </div>
             </div>
 
                 <% @challenges_done[1..].each do |challenge| %>
                 <div class="carousel-item">
                   <img src="<%= cl_image_path challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block align-middle">
-                  <h2>Done challenge:</h2>
-                  <h4><%= challenge.challenge.title %></h4>
-                </div>
+                  <div class="carousel-caption d-none d-md-block align-middle">
+                    <h2>Done challenge:</h2>
+                    <h4><%= challenge.challenge.title %></h4>
+                  </div>
+                  <div class="tag <%="tag_#{challenge.challenge.category.split(' ').join('_')}" %>" >
+                    <%= challenge.challenge.category %>
+                  </div>
                 </div>
                 <% end %>
 
@@ -79,11 +84,14 @@
 
     <% if @challenge %>
 
-      <div div class="half-bottom shadow d-flex align-items-center justify-content-center", style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
+      <div class="half-bottom shadow d-flex align-items-center justify-content-center", style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
         <%= link_to challenge_path(@challenge.challenge) do %>
           <div class="containerchallenge d-flex d-md-block ">
             <h2>Next challenge:</h2>
             <h4><%= @challenge.challenge.title %></h4>
+          </div>
+            <div class="tag <%="tag_#{@challenge.challenge.category.split(' ').join('_')}" %>" >
+            <%= @challenge.challenge.category %>
           </div>
         <% end %>
       </div>

@@ -37,7 +37,6 @@
   flex: 1 0 auto;
   text-align: center;
   vertical-align: sub;
-  // box-shadow: 3px 8px 10px #888888;
 }
 
 .margin-ranking-card {
@@ -57,9 +56,10 @@
   margin: 30px 0;
   flex: 0 0 auto;
   width: 49%;
-  // box-shadow: 3px 8px 10px #888888;
   background: rgb(98, 100, 96);
   color: white;
+  text-align: center;
+  position: relative;
 }
 
 .half-bottom-caroussel {
@@ -67,7 +67,6 @@
   margin: 30px 0 !important;
   flex: 0 0 auto !important;
   width: 49% !important;
-  // box-shadow: 3px 8px 10px #888888 !important;
   position: relative;
 }
 
@@ -76,7 +75,6 @@
   align-items: stretch;
   justify-content: center;
   text-align: center;
-  // padding-top: 19%;
   padding-bottom: 20%;
   text-shadow: 6px 6px 10px #080808;
 }
@@ -91,24 +89,9 @@
   padding-bottom: 24%;
 }
 
-.half-bottom {
-  text-align: center;
-  // padding-top: 14.5%;
-}
-
 .carousel-inner {
   border-radius: 4px;
 }
-
-// .carousel-item.active  {
-//   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-// }
-// .carousel-item .slide {
-//   position: relative;
-//   z-index: -1;
-//   // width: 400px;
-//   // height: 600px;
-// }
 
 .carousel-item-next {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) !important;
