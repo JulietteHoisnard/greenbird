@@ -49,6 +49,23 @@ class ChallengesController < ApplicationController
     redirect_to challenges_path
   end
 
+  # def label
+  #   case @challenge.category
+  #   when "home"
+  #     @tagcolor = "8CC34A"
+  #   when "zero waste"
+  #     @tagcolor = "FBA870"
+  #   when "transport"
+  #     @tagcolor = 
+  #   when "food"
+  #     @tagcolor = 
+
+  #   else
+  #     "Error: capacity has an invalid value (#{capacity})"
+  #   end
+  #   if @challenge
+  # end
+
   private
 
   def challenge_params
