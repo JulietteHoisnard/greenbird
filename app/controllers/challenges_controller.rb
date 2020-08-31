@@ -15,6 +15,21 @@ class ChallengesController < ApplicationController
     @instance = @challenges_todo.first
     # the above line makes @instance attributes accessible
 
+
+    case @challenge.category
+    when "home"
+      @classtagcolor = "tag_home"
+    when "zero waste"
+      @classtagcolor = "tag_zero_waste"
+    when "transport"
+      @classtagcolor = "tag_transport"
+    when "food"
+      @classtagcolor = "tag_food"
+    when "civic action"
+      @classtagcolor = "tag_civic_action"
+    else
+      "error in label name"
+    end
   end
 
   def new

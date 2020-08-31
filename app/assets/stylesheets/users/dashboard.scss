@@ -57,7 +57,7 @@
   margin: 30px 0;
   flex: 0 0 auto;
   width: 49%;
-  box-shadow: 3px 8px 10px #888888;
+  // box-shadow: 3px 8px 10px #888888;
   background: rgb(98, 100, 96);
   color: white;
 }
@@ -67,7 +67,7 @@
   margin: 30px 0 !important;
   flex: 0 0 auto !important;
   width: 49% !important;
-  box-shadow: 3px 8px 10px #888888 !important;
+  // box-shadow: 3px 8px 10px #888888 !important;
   position: relative;
 }
 
@@ -75,9 +75,93 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
+  text-align: center;
+  // padding-top: 19%;
+  padding-bottom: 20%;
+  text-shadow: 6px 6px 10px #080808;
 }
 
 .avatar-banner {
   border: 5px solid white;
- 
+
 }
+
+.carousel-caption {
+  text-shadow: 4px 4px 8px #080808;
+  padding-bottom: 24%;
+}
+
+.half-bottom {
+  text-align: center;
+  // padding-top: 14.5%;
+}
+
+.carousel-inner {
+  border-radius: 4px;
+}
+
+// .carousel-item.active  {
+//   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+// }
+// .carousel-item .slide {
+//   position: relative;
+//   z-index: -1;
+//   // width: 400px;
+//   // height: 600px;
+// }
+
+.carousel-item-next {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) !important;
+}
+
+
+
+
+.carousel-item:after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+.carousel-item img{
+  display:block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

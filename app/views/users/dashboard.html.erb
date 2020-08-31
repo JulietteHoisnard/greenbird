@@ -38,25 +38,28 @@
 
     <% if @challenges_done %>
 
-        <div id="carouselExampleControls" class="half-bottom-caroussel margin-ranking-card carousel slide" data-ride="carousel">
-          
-          <div class="top-text">
-            <p>Challenges done: </p>
-          </div>
+        <div id="carouselExampleControls" class="half-bottom-caroussel shadow margin-ranking-card carousel slide" data-ride="carousel">
 
-          <div class="carousel-inner">
+          <div class="carousel-inner shadow">
             <div class="carousel-item active">
-                <img src="<%= cl_image_path @challenges_done.first.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+
+                <img src="<%= cl_image_path @challenges_done.first.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block align-middle">
+                  <h2>Done challenge:</h2>
                   <h4><%= @challenges_done.first.challenge.title %></h4>
                 </div>
             </div>
-            <div class="carousel-item">
-              <img src="<%= cl_image_path @challenges_done.last.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h4><%= @challenges_done.last.challenge.title %></h4>
+
+                <% @challenges_done[1..].each do |challenge| %>
+                <div class="carousel-item">
+                  <img src="<%= cl_image_path challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block align-middle">
+                  <h2>Done challenge:</h2>
+                  <h4><%= challenge.challenge.title %></h4>
                 </div>
-            </div>
+                </div>
+                <% end %>
+
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -69,23 +72,23 @@
         </div>
 
     <% else %>
-      <div class="half-bottom margin-ranking-card">
+      <div class="half-bottom shadow margin-ranking-card">
         <p>No challenges done yet !</p>
       </div>
     <% end %>
 
     <% if @challenge %>
 
-      <div div class="half-bottom", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
+      <div div class="half-bottom shadow d-flex align-items-center justify-content-center", style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
         <%= link_to challenge_path(@challenge.challenge) do %>
-          <p>Next challenge:</p>
-          <div class="containerchallenge">
+          <div class="containerchallenge d-flex d-md-block ">
+            <h2>Next challenge:</h2>
             <h4><%= @challenge.challenge.title %></h4>
           </div>
         <% end %>
       </div>
     <% else %>
-      <div div class="half-bottom">
+      <div div class="half-bottom shadow">
         <h3>Stay tuned for more challenges!</h3>
       </div>
     <% end %>

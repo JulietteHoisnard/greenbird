@@ -1,19 +1,41 @@
 <div class="container m-bottom">
-  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.photo.key, height: 400, width: 1200, crop: :fill %>');">
+  <div class="d-flex box-challenge box justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.photo.key, height: 450, width: 1200, crop: :fill %>');">
     <div>
-      <h3><%= @challenge.call_to_action %></h3>
+      <h2><%= @challenge.call_to_action %></h2>
       <p><%= @challenge.description %></p>
-     <!-- <p><%= @challenge.link %></p> --><br>
+      <br>
       <div btn-c-cta>
-        <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, id: "sweet-alert-demo", class: "link-color btn-green-bird"%>
         <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
+        <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, id: "sweet-alert-demo", class: "link-color btn-green-bird" %>
       </div>
+    </div>
+    <div class="tag <%=@classtagcolor %>" >
+      <%= @challenge.category %>
     </div>
   </div>
 
+  <div class="row d-flex justify-content-around">
+
+    <div class="col-4 d-flex justify-content-center">
+      <div class="btn-green-bird-hover infobox">
+        Learn more
+      </div>
+
+    </div>
+
+    <div class="col-4 d-flex justify-content-center">
+      <div class="btn-green-bird-hover databox">
+        Your impact
+      </div>
+
+    </div>
+  </div>
+
+
+
   <div class="row d-flex">
     <div class="col-6">
-      <div class="small-box info-challenge box ">
+      <div class="small-box info-challenge box">
         <div>
           <h3><%= @challenge.infobox_title %></h3>
           <p><%= @challenge.infobox_desc %></p><br>
@@ -32,7 +54,7 @@
 
     <div class="col-6">
       <div class="small-box data-challenge box">
-        <p><strong>If I do this action everyday, my impact per year is:</strong></p>
+        <p><strong>If I do this action every day for a year, I save:</strong></p>
         <h3><strong><%= @challenge.impact_co %> kg of CO2</strong></h3>
         <p>Level: <%= @challenge.impact_level %></p>
         <p>Yearly savings: <%= @challenge.impact_money %> €</p>
@@ -44,3 +66,5 @@
 
 
 </div>
+
+<%= javascript_pack_tag 'challenge-show' %>
