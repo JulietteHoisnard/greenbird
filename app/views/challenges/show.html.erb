@@ -16,7 +16,7 @@
       <div class="justify-content-center btn-c-cta">
         <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
         <% if @instance.completed %>
-          <%= link_to "You've completed this challenge!", @challenge, class: "link-color btn-green-bird btn-medium-size" %>
+          <%= link_to "You've completed this challenge!", @challenge, class: "link-color btn-green-bird-done btn-medium-size" %>
         <% else %>
           <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, id: "sweet-alert-demo", class: "link-color btn-green-bird" %>
         <% end %>
