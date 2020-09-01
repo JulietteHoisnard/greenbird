@@ -11,9 +11,14 @@ class ChallengesController < ApplicationController
     @user.challenges = Challenge.all
 
     @challenges_todo = ChallengeUser.where(user_id: current_user.id, completed: false).order(:challenge_id)
+    @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
 
-    @instance = @challenges_todo.first
-    # the above line makes @instance attributes accessible
+    if @challenges_done.count == @user.challenges.count
+      @instance = @challenges_done.first
+    else
+      @instance = @challenges_todo.first
+    end
+    # @instance makes attributes like completed and opt_completed accessible
 
 
     case @challenge.category
