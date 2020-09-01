@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       patch :update_opt, on: :member
     end
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
   get 'users/:id/dashboard', to: 'users#dashboard', as: 'dashboard'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
