@@ -51,10 +51,6 @@
   font-size: 14px;
 }
 
-.card-container {
-  // height: 439px;
-}
-
 .card-badges {
   // border: 1px solid #989898;
   background: white;
@@ -131,4 +127,8 @@ h2 {
 .graphs {
   display: flex;
   justify-content: center;
+}
+
+.card-buttons {
+  margin-top: 1rem;
 }

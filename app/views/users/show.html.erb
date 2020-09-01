@@ -125,37 +125,23 @@
     </div>
     <div class="col-sm-8 no-p">
       <div class="friends-section shadow">
-        <p><strong>My friends</strong></p>
-        <div class="card-buttons">
-          <%= link_to 'Find your friends', users_path, class: "link-color btn-green-bird" %>
-        </div>        
+        <p><strong>My friends</strong></p>   
         <hr class="w-75">
         <div class="row mt-3 px-3">
+          <% @friends.each do |friend| %>
           <div class="col-3 friend-card">
             <div>
-              <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U0165E3CGQN-f7b61d146c95-512" alt="">
-            <p>Tina</p>
+              <%= link_to user_path(friend), style: "color: black; text-decoration: none" do %>
+                <%= cl_image_tag friend.avatar_url, class: "avatar-friend-card",crop: :fill %>
+              <% end %>
+              <p><%= friend.username %></p>
             </div>
           </div>
-          <div class="col-3 friend-card">
-            <div>
-               <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U016AQHF6TF-7d8204dc04a9-512" alt="">
-            <p>Žužu</p>
-            </div>
-          </div>
-          <div class="col-3 friend-card">
-            <div>
-              <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U016JBJPLQL-01d9433a7fea-512" alt="">
-            <p>Rowena</p>
-            </div>
-          </div>
-          <div class="col-3 friend-card">
-            <div>
-              <img class="avatar-friend-card" src="https://ca.slack-edge.com/T02NE0241-U0165E3MWT0-e3bb75012008-512" alt="">
-            <p>David</p>
-            </div>
-          </div>
+          <% end %>
         </div>
+        <div class="card-buttons">
+          <%= link_to 'Find your friends', users_path, class: "link-color btn-green-bird" %>
+        </div>     
       </div>
     </div>
   </div>
