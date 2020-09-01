@@ -22,10 +22,9 @@ class UsersController < ApplicationController
     @user.challenges = Challenge.all
     @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
     # with the above line you can access and use data from the challenges the user has completed
-
     @score = 0
-    @challenges_done.each do |challenge|
-      @score += challenge.impact_co
+      @challenges_done.each do |challenge|
+      @score += challenge.challenge.impact_co
     end
 
     @score = @score / 365
