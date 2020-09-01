@@ -22,6 +22,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def addfriend?
-    record == user
+    true
   end
 end

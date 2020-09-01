@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   def index
     @users = policy_scope(User).order(username: :desc)
     @user = current_user
+
+    friendships = Friendship.where("user_id = ? OR friend_user_id = ?", current_user.id, current_user.id)
+    @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [current_user.id])
   end
 
   def dashboard
@@ -80,6 +83,7 @@ class UsersController < ApplicationController
       else
         render :addfriend
       end
+    authorize @friend_user
   end
 
   # def deletefriend

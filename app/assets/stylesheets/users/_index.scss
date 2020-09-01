@@ -39,3 +39,7 @@ p {
   align-items: center;
   margin-right: 7px;
 }
+
+form[class="button_to"] button[type="submit"] {
+  border: 0
+}
