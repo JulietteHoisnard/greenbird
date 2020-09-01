@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :challenges do
-    resources :challenge_users, only: [:new, :create, :update] do
+    resources :challenge_users, only: [:update, :new, :create] do
       patch :update_opt, on: :member
     end
   end

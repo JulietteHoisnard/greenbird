@@ -8,6 +8,7 @@ class ChallengeUsersController < ApplicationController
     redirect_to dashboard_path(@user)
   end
 
+
   def update_opt
     @challenge_user.opt_completed = true
     @challenge_user.save
