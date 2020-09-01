@@ -1,0 +1,43 @@
+.users-container {
+}
+
+.users-list {
+  max-width: 700px;
+  margin: auto;
+}
+
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-bottom: solid 1px #18305959;
+}
+
+.block-left {
+  display: flex;
+}
+
+.avatar-profile {
+  margin-right: 15px;
+}
+
+.fa-user-plus {
+  font-size: 30px;
+  color: #183059;
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin-bottom: 0.3rem;
+}
+
+.block-right {
+  display: flex;
+  align-items: center;
+  margin-right: 7px;
+}

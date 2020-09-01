@@ -1,26 +1,39 @@
- <div class="row justify-content-center mt-4">
-  <h1>All Users</h1>
-</div>
-
-
-<div id="cards-container">
-  <div class="card-columns">
-    <% @users.each do |user| %>
-      <%= link_to user_path(user), style: "color: black; text-decoration: none" do %>
-      <div class="card" style="width: 350px;">
-        <div class="card-trip">
-        <%= cl_image_tag user.avatar_url, height: 225, width: 350, crop: :fill %>
-          <div class="card-trip-infos">
+<div class="container">
+  <div class="title-users">
+    <h4>All users</h4>
+  </div>
+  <div class="search-container">
+  </div>
+  <div class="users-container">
+    <div class="users-list">
+      <% @users.each do |user| %>
+      <div class="user-container">
+        <div class="block-left">
+          <%= link_to user_path(user), style: "color: black; text-decoration: none" do %>
+          <%= cl_image_tag user.avatar_url, class: "avatar-profile",crop: :fill %>
+          <% end %>
+          <div class="text-container">
             <div>
-              <h5><%= user.username %></h5>
-              <p><%= user.bio %></p>
+              <p><strong><%= user.username %></strong></p>
+              <p><%= user.country %>
+                <% if user.country != 'World' %>
+                <%= ISO3166::Country.find_country_by_name(user.country).emoji_flag %>
+                <% end %>
+              </p>
             </div>
           </div>
         </div>
+        <div class="block-right">
+          <% if user == @user %>
+            <%= link_to "My profile", user_path(current_user), class: "btn" %>
+          <% elsif @user.friend_ids.include? user.id %>
+            <p>Already your friend</p>
+          <% else %>
+            <i class="fas fa-user-plus"></i>
+          <% end %>
+        </div>
+      </div>
       <% end %>
     </div>
-    <% end %>
-
-  </div>
   </div>
 </div>
