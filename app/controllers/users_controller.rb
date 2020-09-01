@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: :index
+
+  def index
+    @users = policy_scope(User).order(username: :desc)
+  end
 
   def dashboard
     @user.challenges = Challenge.all
@@ -71,6 +75,14 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     end
   end
+
+  # def makefriend
+  #   @user.friends_id
+  # end
+
+  # def deletefriend
+
+  # end
 
   private
 
