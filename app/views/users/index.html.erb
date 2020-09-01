@@ -9,16 +9,28 @@
       <% @users.each do |user| %>
       <div class="user-container">
         <div class="block-left">
+          <%= link_to user_path(user), style: "color: black; text-decoration: none" do %>
           <%= cl_image_tag user.avatar_url, class: "avatar-profile",crop: :fill %>
-          <div>
-            <p><strong><%= user.username %></strong></p>
-            <p><%= user.country %>
-              <%= ISO3166::Country.find_country_by_name(user.country).emoji_flag %>
-            </p>
+          <% end %>
+          <div class="text-container">
+            <div>
+              <p><strong><%= user.username %></strong></p>
+              <p><%= user.country %>
+                <% if user.country != 'World' %>
+                <%= ISO3166::Country.find_country_by_name(user.country).emoji_flag %>
+                <% end %>
+              </p>
+            </div>
           </div>
         </div>
         <div class="block-right">
-          <i class="fas fa-user-plus"></i>
+          <% if user == @user %>
+            <%= link_to "My profile", user_path(current_user), class: "btn" %>
+          <% elsif @user.friend_ids.include? user.id %>
+            <p>Already your friend</p>
+          <% else %>
+            <i class="fas fa-user-plus"></i>
+          <% end %>
         </div>
       </div>
       <% end %>
