@@ -1,5 +1,5 @@
 .card-lp {
-  border: 1px solid #8CC34A;
+  // border: 4px solid #8CC34A;
   border-radius: 4px;
   margin: 20px 5px;
   max-width: 275px;
@@ -7,9 +7,17 @@
   text-align: center;
   padding: 50px 25px;
   font-weight: bold;
-  box-shadow: 3px 8px 10px #888888;
+  // box-shadow: 3px 8px 10px #888888;
   background: white;
 }
+
+// .two {
+//   padding-top: 55px !important;
+// }
+
+// .three {
+//   padding-top: 100px !important;
+// }
 
 .card-lp:hover {
 
@@ -19,13 +27,58 @@
   box-shadow: 5px 15px 10px #888888;
 }
 
+.card-lp-new {
+  // border: 4px solid #8CC34A;
+  border-radius: 4px;
+  margin: 20px 0;
+  max-width: 275px;
+  height: 300px;
+  text-align: center;
+  padding: 40px 0;
+  font-weight: bold;
+  // box-shadow: 3px 8px 10px #888888;
+  background: white;
+}
+
+// .card-lp-new:hover {
+
+//   background: #8CC34A;
+//   color: white;
+//   transition: 0.3s;
+//   box-shadow: 5px 15px 10px #888888;
+//   .number-steps {
+//   color: white;
+//   }
+//   .green-border {
+//   background-color: white;
+// }
+// }
+
+.green-border {
+  height: 100%;
+  width: 1px;
+  background-color: #8CC34A;
+}
+
+.number-steps {
+  font-size: 50px;
+  padding: 0 20px;
+  color: #183059;
+}
+
+.text-steps {
+  text-align: center;
+  padding: 70px 10px;
+  color: #183059;
+}
+
 .active-card {
   background: #8CC34A;
   color: white;
 }
 
 .card-testimonial {
-  border: 1px solid #989898;
+  // border: 1px solid #989898;
   background: white;
   border-radius: 4px;
   margin: 100px 5px;
@@ -33,7 +86,7 @@
   height: 400px;
   text-align: center;
   padding: 90px 25px;
-  box-shadow: 3px 8px 10px #888888;
+  // box-shadow: 3px 8px 10px #888888;
   position: relative;
 }
 
