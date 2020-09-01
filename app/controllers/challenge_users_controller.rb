@@ -4,15 +4,16 @@ class ChallengeUsersController < ApplicationController
   def update
     @challenge_user.completed = true
     @challenge_user.save
-    sleep (2.0)
-    redirect_to dashboard_path(@user) # notice: "You rock! Redirecting you back to your dashboard..."
+    sleep (3.0)
+    redirect_to dashboard_path(@user)
   end
 
 
   def update_opt
     @challenge_user.opt_completed = true
     @challenge_user.save
-    redirect_to challenge_path(@challenge), notice: "You finished the optional challenge, you awesome person!"
+    sleep (3.0)
+    redirect_to challenge_path(@challenge)
   end
 
   private
