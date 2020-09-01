@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     @challenge = @challenges_todo.first
 
-    @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)    
+    @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)
 
   end
 
@@ -17,6 +17,14 @@ class UsersController < ApplicationController
     @user.challenges = Challenge.all
     @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
     # with the above line you can access and use data from the challenges the user has completed
+
+    @score = 0
+    @challenges_done.each do |challenge|
+      @score += challenge.impact_co
+    end
+
+    @score = @score / 365
+
     @data = Hash.new
     CSV.foreach("db/co-emissions-per-capita.csv", headers: true) do |row|
       if row['Entity'] == 'World'
@@ -35,8 +43,8 @@ class UsersController < ApplicationController
       end
     end
     p @datauser
-    
-    
+
+
     @datachallengeuser = Hash.new
     @datatarget = Hash.new
     counter = 0
