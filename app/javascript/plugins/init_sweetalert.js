@@ -1,12 +1,12 @@
 import Swal from 'sweetalert'
 
 const initSweetalert = (selector, options = {}) => {
-  const swalButton = document.querySelector(selector);
-  if (swalButton) { // protect other pages
-    swalButton.addEventListener('click', () => {
+  const swalButtons = document.querySelectorAll(selector);
+  swalButtons.forEach((button) => {
+    button.addEventListener('click', () => {
       Swal(options).then(callback);
     });
-  }
+  });
 };
 
 export { initSweetalert };
