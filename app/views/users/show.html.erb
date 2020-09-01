@@ -124,24 +124,43 @@
       </div>
     </div>
     <div class="col-sm-8 no-p">
-      <div class="friends-section shadow">
-        <p><strong>My friends</strong></p>   
-        <hr class="w-75">
-        <div class="row mt-3 px-3">
-          <% @friends.each do |friend| %>
-          <div class="col-3 friend-card">
-            <div>
-              <%= link_to user_path(friend), style: "color: black; text-decoration: none" do %>
-                <%= cl_image_tag friend.avatar_url, class: "avatar-friend-card",crop: :fill %>
-              <% end %>
-              <p><%= friend.username %></p>
+      <div class="row">
+        <div class="friends-section shadow">
+          <p><strong>My friends</strong></p>   
+          <div class="card-buttons">
+            <%= link_to 'Find your friends', users_path, class: "link-color btn-green-bird" %>
+          </div>
+          <hr class="w-75">
+          <div class="row mt-3 px-3">
+            <% @friends.each do |friend| %>
+            <div class="col-3 friend-card">
+              <div>
+                <%= link_to user_path(friend), style: "color: black; text-decoration: none" do %>
+                  <%= cl_image_tag friend.avatar_url, class: "avatar-friend-card",crop: :fill %>
+                <% end %>
+                <p><%= friend.username %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="card-buttons">
+            <%= link_to 'Find your friends', users_path, class: "link-color btn-green-bird" %>
+          </div>     
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="friends-section shadow">
+          <p><strong>My actual contribution to CO2 reduction</strong></p>
+          <hr class="w-75">
+          <div class="row mt-1 px-3">
+            <div class="col-12 counter-co2">
+              <div>
+                <p><%= @score %> kg</p>
+              </div>
             </div>
           </div>
-          <% end %>
         </div>
-        <div class="card-buttons">
-          <%= link_to 'Find your friends', users_path, class: "link-color btn-green-bird" %>
-        </div>     
       </div>
     </div>
   </div>
