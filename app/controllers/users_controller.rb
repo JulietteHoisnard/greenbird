@@ -70,7 +70,13 @@ class UsersController < ApplicationController
   end
 
   def addfriend
+    @user == current_user
     @user.friends_id << friend_user_id
+    if @user.save
+      redirect_to user_path(@user), notice: 'Your pet was successfully created!'
+    else
+      render :addfriend
+    end
   end
 
   # def deletefriend

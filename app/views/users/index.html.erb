@@ -25,11 +25,11 @@
         </div>
         <div class="block-right">
           <% if user == @user %>
-            <%= link_to "My profile", user_path(current_user), class: "btn" %>
+            <%= link_to "My profile", user_path(current_user), class: "btn-green-bird" %>
           <% elsif @user.friend_ids.include? user.id %>
             <p>Already your friend</p>
           <% else %>
-            <i class="fas fa-user-plus"></i>
+            <%= button_tag "", addfriend_path(@user, user.id), class: "fas fa-user-plus" %>
           <% end %>
         </div>
       </div>
