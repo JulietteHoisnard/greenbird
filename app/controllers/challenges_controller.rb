@@ -14,7 +14,7 @@ class ChallengesController < ApplicationController
     @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
 
     if @challenges_done.count == @user.challenges.count
-      @instance = @challenges_done.first
+      @instance = @challenges_done.where(challenge_id: @challenge.id).first
     else
       @instance = @challenges_todo.first
     end
