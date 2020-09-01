@@ -29,7 +29,7 @@
           <% elsif @user.friend_ids.include? user.id %>
             <p>Already your friend</p>
           <% else %>
-            <%= button_tag "", addfriend_path(@user, user.id), class: "fas fa-user-plus" %>
+            <%= button_to "", addfriend_path(@user, user.id), class: "fas fa-user-plus" %>
           <% end %>
         </div>
       </div>

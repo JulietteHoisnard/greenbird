@@ -20,4 +20,8 @@ class UserPolicy < ApplicationPolicy
   def update?
     record == user
   end
+
+  def addfriend?
+    record == user
+  end
 end
