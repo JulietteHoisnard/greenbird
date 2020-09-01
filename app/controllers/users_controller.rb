@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = policy_scope(User).order(username: :desc)
+    @user = current_user
   end
 
   def dashboard
@@ -76,9 +77,9 @@ class UsersController < ApplicationController
     end
   end
 
-  # def makefriend
-  #   @user.friends_id
-  # end
+  def addfriend
+    @user.friends_id << friend_user_id
+  end
 
   # def deletefriend
 
