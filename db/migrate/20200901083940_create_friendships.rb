@@ -1,6 +1,6 @@
 class CreateFriendships < ActiveRecord::Migration[6.0]
   def self.up
-    create_table :friendships, id: false do |t|
+    create_table :friendships do |t|
       t.integer :user_id
       t.integer :friend_user_id
     end
