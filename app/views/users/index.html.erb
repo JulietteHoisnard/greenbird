@@ -1,16 +1,27 @@
 <div class="container">
   <div class="title-users">
-    <h2>All users</h2>
+    <h4>All users</h4>
   </div>
   <div class="search-container">
   </div>
-  <div class="users-list">
-    <% @users.each do |user| %>
-    <div class="user-container">
-
-      <%= cl_image_tag user.avatar_url, class: "avatar-profile",crop: :fill %>
-
+  <div class="users-container">
+    <div class="users-list">
+      <% @users.each do |user| %>
+      <div class="user-container">
+        <div class="block-left">
+          <%= cl_image_tag user.avatar_url, class: "avatar-profile",crop: :fill %>
+          <div>
+            <p><strong><%= user.username %></strong></p>
+            <p><%= user.country %>
+              <%= ISO3166::Country.find_country_by_name(user.country).emoji_flag %>
+            </p>
+          </div>
+        </div>
+        <div class="block-right">
+          <i class="fas fa-user-plus"></i>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
