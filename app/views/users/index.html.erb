@@ -1,26 +1,16 @@
- <div class="row justify-content-center mt-4">
-  <h1>All Users</h1>
-</div>
-
-
-<div id="cards-container">
-  <div class="card-columns">
+<div class="container">
+  <div class="title-users">
+    <h2>All users</h2>
+  </div>
+  <div class="search-container">
+  </div>
+  <div class="users-list">
     <% @users.each do |user| %>
-      <%= link_to user_path(user), style: "color: black; text-decoration: none" do %>
-      <div class="card" style="width: 350px;">
-        <div class="card-trip">
-        <%= cl_image_tag user.avatar_url, height: 225, width: 350, crop: :fill %>
-          <div class="card-trip-infos">
-            <div>
-              <h5><%= user.username %></h5>
-              <p><%= user.bio %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+    <div class="user-container">
+
+      <%= cl_image_tag user.avatar_url, class: "avatar-profile",crop: :fill %>
+
     </div>
     <% end %>
-
-  </div>
   </div>
 </div>
