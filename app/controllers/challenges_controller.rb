@@ -16,8 +16,6 @@ class ChallengesController < ApplicationController
 
     @instance = @all_challenges.where(challenge_id: @challenge.id).first
     # @instance makes attributes like completed and opt_completed accessible
-
-
     case @challenge.category
     when "home"
       @classtagcolor = "tag_home"
