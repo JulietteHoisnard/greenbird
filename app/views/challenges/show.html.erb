@@ -15,7 +15,11 @@
 
       <div class="justify-content-center btn-c-cta">
         <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
-        <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, id: "sweet-alert-demo", class: "link-color btn-green-bird" %>
+        <% if @instance.completed %>
+          <%= link_to "You've completed this challenge!", @challenge, class: "link-color btn-green-bird-done btn-medium-size" %>
+        <% else %>
+          <%= link_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :put, id: "sweet-alert-demo", class: "link-color btn-green-bird" %>
+        <% end %>
       </div>
 
 <!-- the following div is for spacing. don't take it out!! -->
@@ -58,7 +62,7 @@
           <p><%= @challenge.infobox_desc %></p><br>
         </div>
         <div class="button-read">
-             <%= link_to 'Read more', @challenge.infobox_link, target: "_blank", class: "link-color btn-green-bird-empty btn-medium-size" %>
+          <%= link_to 'Read more', @challenge.infobox_link, target: "_blank", class: "link-color btn-green-bird-empty btn-medium-size" %>
         </div><br>
         <% if @instance.opt_completed %>
           <%= link_to "You've already completed this optional challenge!", @challenge, class: "link-color btn-green-bird btn-medium-size" %>

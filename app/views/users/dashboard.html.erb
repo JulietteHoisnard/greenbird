@@ -50,7 +50,7 @@
               <img src="<%= cl_image_path @challenges_done.first.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
               <%= link_to challenge_path(@challenges_done.first.challenge) do %>
                 <div class="carousel-caption d-none d-md-block align-middle">
-                  <h2>Done challenge:</h2>
+                  <h2>Completed challenge:</h2>
                   <h4><%= @challenges_done.first.challenge.title %></h4>
                 </div>
                 <div class="tag <%="tag_#{@challenges_done.first.challenge.category.split(' ').join('_')}" %>" >
@@ -64,7 +64,7 @@
                   <img src="<%= cl_image_path challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
                   <%= link_to challenge_path(challenge.challenge) do %>
                     <div class="carousel-caption d-none d-md-block align-middle">
-                      <h2>Done challenge:</h2>
+                      <h2>Completed challenge:</h2>
                       <h4><%= challenge.challenge.title %></h4>
                     </div>
                     <div class="tag <%="tag_#{challenge.challenge.category.split(' ').join('_')}" %>" >
@@ -87,7 +87,7 @@
 
     <% else %>
       <div class="half-bottom shadow margin-ranking-card">
-        <p>No challenges done yet !</p>
+        <p>No challenges completed yet!</p>
       </div>
     <% end %>
 
