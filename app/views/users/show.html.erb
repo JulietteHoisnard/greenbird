@@ -154,15 +154,15 @@
 
         <div class="row">
           <div class="friends-section shadow">
-          <p><strong>My actual contribution to CO2 reduction</strong></p>
+          <p><strong>Categories of challenges</strong></p>
           <hr class="w-75">
-          <div class="row mt-1 px-3">
-            <div class="col-12 counter-co2">
-              <div>
-                <p><%= @score %> kg</p>
-              </div>
+          <% if @challenges_done != [] %>
+            <div class="pie-padding">
+            <%= pie_chart @challengestest.group(:category).count, colors: ["#ea526f","#8CC34A", "#FBA870", "#183059", "#9FBBCC"], legend: "right", donut: true %>
             </div>
-          </div>
+          <% else %>
+            <p>No challenge done yet!</p>
+          <% end %>
         </div>
       </div>
     </div>
