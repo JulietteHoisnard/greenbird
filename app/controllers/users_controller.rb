@@ -68,8 +68,8 @@ class UsersController < ApplicationController
     end
     p @datachallengeuser
 
-    friendships = Friendship.where("user_id = ? OR friend_user_id = ?", current_user.id, current_user.id)
-    @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [current_user.id])
+    friendships = Friendship.where("user_id = ? OR friend_user_id = ?", @user.id, @user.id)
+    @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [@user.id])
   end
 
   def edit
