@@ -1,42 +1,10 @@
 <div class="container m-bottom">
-  <div class="top-banner shadow">
+  <div class="top-banner">
     <div style="height: 0;text-align: center; position: relative;top: -75px;">
       <%= cl_image_tag current_user.avatar_url, class: "avatar-large avatar-banner" %>
     </div>
-    <h3><strong>Welcome <%= @user.username %>!</strong></h3>
-  </div>
+    <h3><strong class="border-h3">Welcome <%= @user.username %>!</strong></h3>
 
-  <div class="rankings-container">
-    <div class="ranking-card shadow margin-ranking-card ">
-      <p><strong>Categories of challenges</strong></p>
-      <% if @challenges_done != [] %>
-        <%= pie_chart @challenges_done.group(:challenge_id).count %>
-      <% else %>
-        <p>No challenge done yet!</p>
-      <% end %>
-    </div>
-    <div class="ranking-card shadow margin-ranking-card">
-      <span class="emoji">🔥</span>
-      <p><strong>Days in a row</strong></p>
-        <div class="circle-nr f-flex justify-content-center align-items-center">
-          <p class="number">5</p>
-        </div>
-    </div>
-    <div class="ranking-card shadow margin-ranking-card">
-      <span class="emoji">💪</span>
-      <p><strong>Challenges done</strong></p>
-      <div class="circle-nr f-flex justify-content-center align-items-center">
-        <p class="number"><%= @challenges_done.count %></p>
-      </div>
-
-    </div>
-    <div class="ranking-card shadow">
-      <span class="emoji">🤓</span>
-      <p><strong>Optional challenges done</strong></p>
-      <div class="circle-nr f-flex justify-content-center align-items-center">
-        <p class="number"><%= @opt_challenges_done.count %></p>
-      </div>
-    </div>
   </div>
 
   <div class="bottom-box">
@@ -110,4 +78,38 @@
       </div>
     <% end %>
   </div>
-</div>
+
+
+  <div class="rankings-container">
+    <div class="ranking-card shadow margin-ranking-card ">
+      <p><strong>Categories of challenges</strong></p>
+      <% if @challenges_done != [] %>
+        <%= pie_chart @challenges_done.group(:challenge_id).count %>
+      <% else %>
+        <p>No challenge done yet!</p>
+      <% end %>
+    </div>
+    <div class="ranking-card shadow margin-ranking-card">
+      <span class="emoji">🔥</span>
+      <p><strong>Days in a row</strong></p>
+        <div class="circle-nr f-flex justify-content-center align-items-center">
+          <p class="number">5</p>
+        </div>
+    </div>
+    <div class="ranking-card shadow margin-ranking-card">
+      <span class="emoji">💪</span>
+      <p><strong>Challenges done</strong></p>
+      <div class="circle-nr f-flex justify-content-center align-items-center">
+        <p class="number"><%= @challenges_done.count %></p>
+      </div>
+
+    </div>
+    <div class="ranking-card shadow">
+      <span class="emoji">🤓</span>
+      <p><strong>Optional challenges done</strong></p>
+      <div class="circle-nr f-flex justify-content-center align-items-center">
+        <p class="number"><%= @opt_challenges_done.count %></p>
+      </div>
+    </div>
+  </div>
+  </div>
