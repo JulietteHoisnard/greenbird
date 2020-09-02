@@ -19,18 +19,10 @@ class UsersController < ApplicationController
 
     @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)
 
-    @today_done = @challenges_done.where(date_of_completion: Date.today).first
-    @yesterday_done = @challenges_done.where(date_of_completion: Date.today - 1).first
+    # @today_done = @challenges_done.where(date_of_completion: Date.today).first
+    # @yesterday_done = @challenges_done.where(date_of_completion: Date.today - 1).first
 
-    @streak = 0
-
-    if @today_done
-      @streak += 1
-    elsif @today_done && @yesterday_done
-      @streak += 2
-    else
-      @streak = 0
-    end
+    streakc
 
 
     @score = 0
@@ -131,35 +123,37 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def streak
-    @streak_counter = 0
+  def streakc
+    @streak = 0
     today = Date.today
 
     instances_found = ChallengeUser.where.not(date_of_completion: [nil])
     dates_array = instances_found.map { |instance| instance.date_of_completion }
 
-    dates_array.reduce(today) do |memo, date|
+    unique_dates = dates_array.uniq
+
+    unique_dates.reduce(today) do |memo, date|
       yesterday = memo.yesterday.to_date
 
       if date == yesterday || date == today
-        @streak_counter += 1
+        @streak += 1
         memo = date
       end
 
     end
 
-    @streak_counter
-
+    @streak
 
   end
 
 
   def streak
+
     @streak = 0
 
-    if today_done
+    if @today_done
       @streak += 1
-    elsif today_done and yesterday_done
+    elsif @today_done && @yesterday_done
       @streak += 2
     else
       @streak = 0
