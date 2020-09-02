@@ -10,7 +10,7 @@
                 <p><strong><%= @user.username %></strong></p>
                 <hr class="w-75">
                 <p>My Country:</p>
-                <p class="p-user"><%= @user.country %> <% if @user.country != 'World' %>
+                <p class="p-user" id="<%=@user.id%>"><%= @user.country %> <% if @user.country != 'World' %>
                     <%= ISO3166::Country.find_country_by_name(@user.country).emoji_flag %>
                     <% end %>
                 </p>
@@ -86,8 +86,8 @@
                   <% end %>
                     </div>
 
-                  <% if @challenges_done.count >= 5 %>
-                    <div class="card-badge d-flex justify-content-start">
+                  <% if @challenges_done.count >= 2 %>
+                    <div id="sweet-alert-demo" class="card-badge d-flex justify-content-start">
                       <%= image_tag "flame.jpg", class:"earth-logo" %>
                       <p class="card-title-badge">You're on fire!!!</p>
                   <% else %>
@@ -129,7 +129,7 @@
     <div class="col-sm-8 no-p">
       <div class="row">
         <div class="friends-section shadow">
-          <p><strong>My friends</strong></p>   
+          <p><strong>My friends</strong></p>
           <hr class="w-75">
           <div class="row mt-3 px-3">
             <% @friends.each do |friend| %>
@@ -148,7 +148,7 @@
             <%= link_to 'Find your friends', users_path, class: "link-color btn-green-bird" %>
             <% else %>
             <% end %>
-          </div>     
+          </div>
         </div>
         </div>
 
