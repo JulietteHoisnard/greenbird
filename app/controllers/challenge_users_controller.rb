@@ -3,6 +3,7 @@ class ChallengeUsersController < ApplicationController
 
   def update
     @challenge_user.completed = true
+    @challenge_user.date_of_completion = Date.today
     @challenge_user.save
     sleep (3.0)
     redirect_to dashboard_path(@user)
