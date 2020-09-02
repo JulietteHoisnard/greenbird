@@ -32,18 +32,20 @@ class UsersController < ApplicationController
       @streak = 0
     end
 
-  end
 
-  def show
-    @user.challenges = Challenge.all
-    @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
-    # with the above line you can access and use data from the challenges the user has completed
     @score = 0
       @challenges_done.each do |challenge|
       @score += challenge.challenge.impact_co
     end
 
     @score = @score / 365
+
+  end
+
+  def show
+    @user.challenges = Challenge.all
+    @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
+    # with the above line you can access and use data from the challenges the user has completed
 
     @data = Hash.new
     CSV.foreach("db/co-emissions-per-capita.csv", headers: true) do |row|
@@ -83,6 +85,14 @@ class UsersController < ApplicationController
 
     friendships = Friendship.where("user_id = ? OR friend_user_id = ?", @user.id, @user.id)
     @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [@user.id])
+
+    # @user.challenges.select do |challenge|
+    #   if @challenges_done.challenge_id == challenge.id
+
+
+
+
+
   end
 
   def edit
