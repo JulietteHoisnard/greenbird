@@ -19,7 +19,18 @@ class UsersController < ApplicationController
 
     @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)
 
-    @today_done = @challenges_done.where(date_of_completion: Date.today)
+    @today_done = @challenges_done.where(date_of_completion: Date.today).first
+    @yesterday_done = @challenges_done.where(date_of_completion: Date.today - 1).first
+
+    @streak = 0
+
+    if @today_done
+      @streak += 1
+    elsif @today_done && @yesterday_done
+      @streak += 2
+    else
+      @streak = 0
+    end
 
   end
 
