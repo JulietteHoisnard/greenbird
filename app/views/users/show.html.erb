@@ -20,7 +20,10 @@
             </div>
           </div>
           <div class="card-buttons">
+            <% if current_user == @user %>
             <%= link_to 'Edit profile', edit_user_path, class: "link-color btn-green-bird" %>
+            <% else %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -141,7 +144,10 @@
             <% end %>
           </div>
           <div class="card-buttons">
+            <% if current_user == @user %>
             <%= link_to 'Find your friends', users_path, class: "link-color btn-green-bird" %>
+            <% else %>
+            <% end %>
           </div>     
         </div>
         </div>
