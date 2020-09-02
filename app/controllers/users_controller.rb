@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     # @today_done = @challenges_done.where(date_of_completion: Date.today).first
     # @yesterday_done = @challenges_done.where(date_of_completion: Date.today - 1).first
 
-    streakc
+    streak
 
 
     @score = 0
@@ -123,43 +123,37 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def streakc
-    @streak = 0
+  def streak
     today = Date.today
 
-    instances_found = ChallengeUser.where.not(date_of_completion: [nil])
+    instances_found = ChallengeUser.where.not(date_of_completion: [nil]).where(user_id: current_user.id).order(:date_of_completion)
     dates_array = instances_found.map { |instance| instance.date_of_completion }
 
-    unique_dates = dates_array.uniq
+    unique_dates = dates_array.uniq # [ 31st Aug, 1st Sept, 2nd Sept ]
 
-    unique_dates.reduce(today) do |memo, date|
-      yesterday = memo.yesterday.to_date
+    @streak = unique_dates.empty? ? 0 : 1
 
-      if date == yesterday || date == today
-        @streak += 1
-        memo = date
+    unique_dates.each_with_index do |date, index|
+      following_date = unique_dates[index + 1]
+
+      if following_date
+        difference = (following_date - date).to_i
+
+        if difference == 1
+          @streak += 1
+        end
+
       end
+
+      # for later:
+      # check if difference from next date to this date => 1
+      # if yes => increase @streak + 1
+      # if no => todo later
 
     end
 
     @streak
 
   end
-
-
-  def streak
-
-    @streak = 0
-
-    if @today_done
-      @streak += 1
-    elsif @today_done && @yesterday_done
-      @streak += 2
-    else
-      @streak = 0
-    end
-
-  end
-
 
 end
