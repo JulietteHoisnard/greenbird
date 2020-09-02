@@ -7,33 +7,36 @@
   </div>
 
   <div class="rankings-container">
-    <div class="ranking-card shadow margin-ranking-card ">
-      <p><strong>Categories of challenges</strong></p>
-      <% if @challenges_done != [] %>
-        <%= pie_chart @challenges_done.group(:challenge_id).count %>
-      <% else %>
-        <p>No challenge done yet!</p>
-      <% end %>
+    <div class="ranking-card test1 shadow margin-ranking-card ">
+      <span class="emoji">🌿</span>
+      <p><strong>My actual CO2 reduction</strong></p>
+          <hr class="w-75 white-color">
+          <div class="f-flex justify-content-center align-items-center">
+            <p class="number"><%= @score %> kg</p>
+          </div>
     </div>
-    <div class="ranking-card shadow margin-ranking-card">
+    <div class="ranking-card test4 shadow margin-ranking-card">
       <span class="emoji">🔥</span>
       <p><strong>Days in a row</strong></p>
-        <div class="circle-nr f-flex justify-content-center align-items-center">
+      <hr class="w-75 white-color">
+        <div class="f-flex justify-content-center align-items-center">
           <p class="number">5</p>
         </div>
     </div>
-    <div class="ranking-card shadow margin-ranking-card">
+    <div class="ranking-card test3 orange shadow margin-ranking-card">
       <span class="emoji">💪</span>
       <p><strong>Challenges done</strong></p>
-      <div class="circle-nr f-flex justify-content-center align-items-center">
+      <hr class="w-75 white-color">
+      <div class="f-flex justify-content-center align-items-center">
         <p class="number"><%= @challenges_done.count %></p>
       </div>
 
     </div>
-    <div class="ranking-card shadow">
+    <div class="ranking-card test2 shadow">
       <span class="emoji">🤓</span>
       <p><strong>Optional challenges done</strong></p>
-      <div class="circle-nr f-flex justify-content-center align-items-center">
+      <hr class="w-75 white-color">
+      <div class="f-flex justify-content-center align-items-center">
         <p class="number"><%= @opt_challenges_done.count %></p>
       </div>
     </div>
