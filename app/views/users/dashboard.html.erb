@@ -8,12 +8,16 @@
 
   <div class="rankings-container">
     <div class="ranking-card shadow margin-ranking-card ">
-      <p><strong>Categories of challenges</strong></p>
-      <% if @challenges_done != [] %>
-        <%= pie_chart @challenges_done.group(:challenge_id).count %>
-      <% else %>
-        <p>No challenge done yet!</p>
-      <% end %>
+      <span class="emoji">🌿</span>
+      <p><strong>My actual contribution to CO2 reduction</strong></p>
+          <hr class="w-75">
+          <div class="row mt-1 px-3">
+            <div class="col-12 counter-co2">
+              <div>
+                <p><%= @score %> kg</p>
+              </div>
+            </div>
+          </div>
     </div>
     <div class="ranking-card shadow margin-ranking-card">
       <span class="emoji">🔥</span>
