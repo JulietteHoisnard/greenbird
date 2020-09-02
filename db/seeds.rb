@@ -47,7 +47,7 @@ two = Challenge.create(
   impact_level: "medium",
   impact_co: 1325,
   impact_money: 300,
-  impact_desc: "Lower emissions of greenhouse gases."
+  impact_desc: "Lower emissions of greenhouse gases"
 )
 
 file = URI.open('https://res.cloudinary.com/giuliettainthecloud/image/upload/v1598533203/greenbird/eatloweronthefoodchain_rn9vj3.jpg')
