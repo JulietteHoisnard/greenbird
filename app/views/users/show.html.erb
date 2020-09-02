@@ -156,7 +156,7 @@
           <div class="friends-section shadow">
           <p><strong>Categories of challenges</strong></p>
           <% if @challenges_done != [] %>
-            <%= pie_chart @challenges_done.group(:challenge_id).count %>
+            <%= pie_chart @challengestest.group(:category).count %>
           <% else %>
             <p>No challenge done yet!</p>
           <% end %>
