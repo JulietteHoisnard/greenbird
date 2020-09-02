@@ -71,14 +71,9 @@ class UsersController < ApplicationController
 
     friendships = Friendship.where("user_id = ? OR friend_user_id = ?", @user.id, @user.id)
     @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [@user.id])
-
-    # @user.challenges.select do |challenge|
-    #   if @challenges_done.challenge_id == challenge.id
+    
+    @challengestest = @user.challenges.where(id: ChallengeUser.where(user_id: @user.id, completed: true).pluck(:challenge_id).flatten)
       
-
-
-
-
   end
 
   def edit

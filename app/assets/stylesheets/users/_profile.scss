@@ -134,6 +134,16 @@ h2 {
   justify-content: center;
 }
 
+.pie-section {
+  display: flex;
+  justify-content: center;
+}
+
+.pie-padding {
+  max-width: 600px;
+  margin: auto;
+}
+
 .card-buttons {
   margin: 1.5rem 0;
 }
