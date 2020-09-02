@@ -35,7 +35,6 @@
   height: 300px;
   text-align: center;
   padding: 40px 0;
-  font-weight: bold;
   // box-shadow: 3px 8px 10px #888888;
   background: white;
 }
@@ -55,9 +54,14 @@
 // }
 
 .green-border {
-  height: 100%;
-  width: 1px;
+  height: 1px;
+  width: 70%;
   background-color: #8CC34A;
+  margin-left: 15%;
+}
+
+h3 {
+  padding: 0 !important;
 }
 
 .number-steps {
@@ -68,7 +72,7 @@
 
 .text-steps {
   text-align: center;
-  padding: 70px 10px;
+  padding: 30px 15%;
   color: #183059;
 }
 
@@ -81,13 +85,14 @@
   // border: 1px solid #989898;
   background: white;
   border-radius: 4px;
-  margin: 100px 5px;
+  margin: 60px 5px 100px 5px;
   max-width: 330px;
   height: 400px;
   text-align: center;
   padding: 90px 25px;
   // box-shadow: 3px 8px 10px #888888;
   position: relative;
+  color: #183059;
 }
 
 .justi {
