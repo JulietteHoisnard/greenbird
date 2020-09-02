@@ -65,7 +65,7 @@
                 <hr class="w-75">
                 <div class="list-badges">
                   <% if @challenges_done.count >= 1 %>
-                    <div class="card-badge d-flex justify-content-start">
+                    <div id="sweet-alert-badge1" class="card-badge d-flex justify-content-start">
                       <%= image_tag "badge1.png", class:"earth-logo" %>
                       <p class="card-title-badge">You achieved your first challenge!</p>
                   <% else %>
@@ -75,19 +75,8 @@
                   <% end %>
                     </div>
 
-                  <% if @challenges_done.count >= 5 %>
-                    <div class="card-badge d-flex justify-content-start">
-                      <%= image_tag "badge5.png", class:"earth-logo" %>
-                      <p class="card-title-badge">You achieved 5 challenges!</p>
-                  <% else %>
-                    <div class="card-badge opacity d-flex justify-content-start">
-                      <%= image_tag "question.png", class:"earth-logo" %>
-                      <p class="card-title-badge">Badge not yet obtained</p>
-                  <% end %>
-                    </div>
-
-                  <% if @challenges_done.count >= 2 %>
-                    <div id="sweet-alert-demo" class="card-badge d-flex justify-content-start">
+                  <% if @challenges_done.count >= 3 %>
+                    <div id="sweet-alert-badge3" class="card-badge d-flex justify-content-start">
                       <%= image_tag "flame.jpg", class:"earth-logo" %>
                       <p class="card-title-badge">You're on fire!!!</p>
                   <% else %>
@@ -97,8 +86,19 @@
                   <% end %>
                     </div>
 
+                  <% if @challenges_done.count >= 5 %>
+                    <div id="sweet-alert-badge2" class="card-badge d-flex justify-content-start">
+                      <%= image_tag "badge5.png", class:"earth-logo" %>
+                      <p class="card-title-badge">You achieved 5 challenges!</p>
+                  <% else %>
+                    <div class="card-badge opacity d-flex justify-content-start">
+                      <%= image_tag "question.png", class:"earth-logo" %>
+                      <p class="card-title-badge">Badge not yet obtained</p>
+                  <% end %>
+                    </div>
+
                   <% if @challenges_done.count >= 15 %>
-                    <div class="card-badge d-flex justify-content-start">
+                    <div id="sweet-alert-badge4" class="card-badge d-flex justify-content-start">
                       <%= image_tag "coupe.png", class:"earth-logo" %>
                       <p class="card-title-badge">You completed 15 challenges!</p>
                   <% else %>
@@ -109,7 +109,7 @@
                     </div>
 
                   <% if @challenges_done.count == Challenge.all.count %>
-                    <div class="card-badge d-flex justify-content-start">
+                    <div id="sweet-alert-badge5" class="card-badge d-flex justify-content-start">
                       <img class="earth-logo" src="https://image.flaticon.com/icons/svg/814/814513.svg">
                       <p class="card-title-badge">You're a Earth savior! You managed all challenges!</p>
                   <% else %>
