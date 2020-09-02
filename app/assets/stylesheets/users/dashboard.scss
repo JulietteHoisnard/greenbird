@@ -14,15 +14,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.number {
-  font-size: 40px;
-  color: white;
-}
-
-.emoji  {
-  font-size: 30px;
-}
-
 .circle-nr {
   border-radius: 50%;
   height: 65px;
@@ -50,6 +41,40 @@
 
 .margin-ranking-card {
   margin-right: 20px;
+}
+
+.number {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.emoji  {
+  font-size: 30px;
+}
+
+.test1 {
+  color: white;
+  background-color: #183059;
+}
+
+.test2 {
+  color: white;
+  background-color: #FBA870;
+}
+
+.test3 {
+  color: white;
+  background-color:#EA526F;
+}
+
+.test4 {
+  color: white;
+  background-color:#8dc34a;
+}
+
+.white-color {
+  border-top: 1px solid rgba(255, 255, 255, 0.479);
 }
 
 .bottom-box {
@@ -126,7 +151,6 @@
 .carousel-item img{
   display:block;
 }
-
 
 
 
