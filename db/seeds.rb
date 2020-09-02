@@ -69,7 +69,7 @@ three = Challenge.create(
   impact_level: "medium",
   impact_co: 210,
   impact_money: 100,
-  impact_desc: "Reduces pollution and waste, conserves natural resources"
+  impact_desc: "Reduces pollution and waste, conserves natural resources, and protects animals"
 )
 
 file = URI.open('https://res.cloudinary.com/giuliettainthecloud/image/upload/v1598533220/greenbird/singleuseplastic_rcwbhh.jpg')
@@ -111,7 +111,7 @@ five = Challenge.create(
   impact_level: "medium",
   impact_co: 100,
   impact_money: 100,
-  impact_desc: "Living a more sustainable lifestyle"
+  impact_desc: "Reduces pollution and consumer waste"
 )
 
 file = URI.open('https://res.cloudinary.com/giuliettainthecloud/image/upload/v1598533216/greenbird/minimalism_tdcdz1.jpg')
