@@ -9,19 +9,18 @@
   <div class="rankings-container">
     <div class="ranking-card shadow margin-ranking-card ">
       <span class="emoji">🌿</span>
-      <p><strong>My actual contribution to CO2 reduction</strong></p>
+      <p><strong>My actual CO2 reduction</strong></p>
           <hr class="w-75">
           <div class="row mt-1 px-3">
-            <div class="col-12 counter-co2">
-              <div>
-                <p><%= @score %> kg</p>
-              </div>
+            <div class="f-flex justify-content-center align-items-center">
+              <p class="number"><%= @score %>kg</p>
             </div>
           </div>
     </div>
     <div class="ranking-card shadow margin-ranking-card">
       <span class="emoji">🔥</span>
       <p><strong>Days in a row</strong></p>
+      <hr class="w-75">
         <div class="circle-nr f-flex justify-content-center align-items-center">
           <p class="number">5</p>
         </div>
@@ -29,6 +28,7 @@
     <div class="ranking-card shadow margin-ranking-card">
       <span class="emoji">💪</span>
       <p><strong>Challenges done</strong></p>
+      <hr class="w-75">
       <div class="circle-nr f-flex justify-content-center align-items-center">
         <p class="number"><%= @challenges_done.count %></p>
       </div>
@@ -37,6 +37,7 @@
     <div class="ranking-card shadow">
       <span class="emoji">🤓</span>
       <p><strong>Optional challenges done</strong></p>
+      <hr class="w-75">
       <div class="circle-nr f-flex justify-content-center align-items-center">
         <p class="number"><%= @opt_challenges_done.count %></p>
       </div>
