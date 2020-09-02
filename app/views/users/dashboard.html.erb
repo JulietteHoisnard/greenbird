@@ -1,45 +1,9 @@
 <div class="container m-bottom">
-  <div class="top-banner shadow">
+  <div class="top-banner">
     <div style="height: 0;text-align: center; position: relative;top: -75px;">
       <%= cl_image_tag current_user.avatar_url, class: "avatar-large avatar-banner" %>
     </div>
-    <h3><strong>Welcome <%= @user.username %>!</strong></h3>
-  </div>
-
-  <div class="rankings-container">
-    <div class="ranking-card test1 shadow margin-ranking-card ">
-      <span class="emoji">🌿</span>
-      <p><strong>My actual CO2 reduction</strong></p>
-          <hr class="w-75 white-color">
-          <div class="f-flex justify-content-center align-items-center">
-            <p class="number"><%= @score %> kg</p>
-          </div>
-    </div>
-    <div class="ranking-card test4 shadow margin-ranking-card">
-      <span class="emoji">🔥</span>
-      <p><strong>Days in a row</strong></p>
-      <hr class="w-75 white-color">
-      <div class="f-flex justify-content-center align-items-center">
-        <p class="number"><%= @streak %></p>
-      </div>
-    </div>
-    <div class="ranking-card test3 orange shadow margin-ranking-card">
-      <span class="emoji">💪</span>
-      <p><strong>Challenges done</strong></p>
-      <hr class="w-75 white-color">
-      <div class="f-flex justify-content-center align-items-center">
-        <p class="number"><%= @challenges_done.count %></p>
-      </div>
-
-    </div>
-    <div class="ranking-card test2 shadow">
-      <span class="emoji">🤓</span>
-      <p><strong>Optional challenges done</strong></p>
-      <hr class="w-75 white-color">
-      <div class="f-flex justify-content-center align-items-center">
-        <p class="number"><%= @opt_challenges_done.count %></p>
-      </div>
-    </div>
+    <h3><strong class="border-h3">Welcome <%= @user.username %>!</strong></h3>
   </div>
 
   <div class="bottom-box">
@@ -113,4 +77,39 @@
       </div>
     <% end %>
   </div>
-</div>
+    <div class="rankings-container">
+      <div class="ranking-card test1 shadow margin-ranking-card ">
+        <span class="emoji">🌿</span>
+        <p><strong>My actual CO2 reduction</strong></p>
+            <hr class="w-75 white-color">
+            <div class="f-flex justify-content-center align-items-center">
+              <p class="number"><%= @score %> kg</p>
+            </div>
+      </div>
+      <div class="ranking-card test4 shadow margin-ranking-card">
+        <span class="emoji">🔥</span>
+        <p><strong>Days in a row</strong></p>
+        <hr class="w-75 white-color">
+          <div class="f-flex justify-content-center align-items-center">
+            <p class="number"><%= @streak %></p>
+          </div>
+      </div>
+      <div class="ranking-card test3 orange shadow margin-ranking-card">
+        <span class="emoji">💪</span>
+        <p><strong>Challenges done</strong></p>
+        <hr class="w-75 white-color">
+        <div class="f-flex justify-content-center align-items-center">
+          <p class="number"><%= @challenges_done.count %></p>
+        </div>
+
+      </div>
+      <div class="ranking-card test2 shadow">
+        <span class="emoji">🤓</span>
+        <p><strong>Optional challenges done</strong></p>
+        <hr class="w-75 white-color">
+        <div class="f-flex justify-content-center align-items-center">
+          <p class="number"><%= @opt_challenges_done.count %></p>
+        </div>
+      </div>
+    </div>
+  </div>
