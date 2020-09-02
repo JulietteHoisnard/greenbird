@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: :index
+  before_action :set_user, except: [:index, :addfriend]
 
   def index
     @users = policy_scope(User).order(username: :desc)
     @user = current_user
+
+    friendships = Friendship.where("user_id = ? OR friend_user_id = ?", current_user.id, current_user.id)
+    @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [current_user.id])
   end
 
   def dashboard
@@ -64,6 +67,9 @@ class UsersController < ApplicationController
       @datachallengeuser[counter] = co2
     end
     p @datachallengeuser
+
+    friendships = Friendship.where("user_id = ? OR friend_user_id = ?", @user.id, @user.id)
+    @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [@user.id])
   end
 
   def edit
@@ -77,7 +83,14 @@ class UsersController < ApplicationController
   end
 
   def addfriend
-    @user.friends_id << friend_user_id
+    @friend_user = User.find(params[:friend_user_id])
+    @friendship = Friendship.new(user_id: current_user.id, friend_user_id: @friend_user.id)
+      if @friendship.save
+        redirect_to user_path(current_user), notice: 'Your friend was successfully added!'
+      else
+        render :addfriend
+      end
+    authorize @friend_user
   end
 
   # def deletefriend
