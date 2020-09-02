@@ -19,6 +19,12 @@ class UsersController < ApplicationController
 
     @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)
 
+    # @today_done = @challenges_done.where(date_of_completion: Date.today).first
+    # @yesterday_done = @challenges_done.where(date_of_completion: Date.today - 1).first
+
+    streak
+
+
     @score = 0
       @challenges_done.each do |challenge|
       @score += challenge.challenge.impact_co
@@ -117,6 +123,39 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
     authorize @user
+  end
+
+  def streak
+    today = Date.today
+
+    instances_found = ChallengeUser.where.not(date_of_completion: [nil]).where(user_id: current_user.id).order(:date_of_completion)
+    dates_array = instances_found.map { |instance| instance.date_of_completion }
+
+    unique_dates = dates_array.uniq # [ 31st Aug, 1st Sept, 2nd Sept ]
+
+    @streak = unique_dates.empty? ? 0 : 1
+
+    unique_dates.each_with_index do |date, index|
+      following_date = unique_dates[index + 1]
+
+      if following_date
+        difference = (following_date - date).to_i
+
+        if difference == 1
+          @streak += 1
+        end
+
+      end
+
+      # for later:
+      # check if difference from next date to this date => 1
+      # if yes => increase @streak + 1
+      # if no => todo later
+
+    end
+
+    @streak
+
   end
 
 end
