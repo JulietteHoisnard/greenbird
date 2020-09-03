@@ -3,5 +3,5 @@
 meta_product_name: "Greenbird"
 meta_title: "Greenbird - Easy challenges for positive environmental impact"
 meta_description: "Reduce your CO2 footprint in an easy and fun way"
-meta_image: "logo-green.png" # should exist in `app/assets/images/`
+meta_image: "banner-greenbird.png" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
