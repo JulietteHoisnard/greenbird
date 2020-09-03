@@ -67,7 +67,7 @@
         <% if @instance.opt_completed %>
           <%= link_to "You've already completed this challenge!", 'javascript:;', class: "link-color btn-green-bird-done btn-medium-size", style: "color: white; text-decoration: none" %>
         <% else %>
-          <%= button_to 'Optional challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
+          <%= button_to 'Bonus challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
         <% end %>
       </div>
 
