@@ -53,16 +53,16 @@
         </div>
 
     <% else %>
-      <div class="half-bottom shadow margin-ranking-card">
-        <p>No challenges completed yet!</p>
+      <div class="half-bottom shadow margin-ranking-card" id="sad-box">
+        <h2>No challenges completed yet!</h2>
       </div>
     <% end %>
 
     <% if @challenge %>
 
       <% if @today_done %>
-        <div div class="half-bottom shadow">
-          <h2>Check back tomorrow for another challenge!</h2>
+        <div div class="half-bottom shadow" id="wait-box">
+          <h3>Check back tomorrow for another challenge!</h3>
         </div>
 
       <% else %>
@@ -80,7 +80,7 @@
         </div>
         <% end %>
     <% else %>
-      <div div class="half-bottom shadow">
+      <div div class="half-bottom shadow" id="done-box">
         <h3>Stay tuned for more challenges!</h3>
       </div>
     <% end %>
