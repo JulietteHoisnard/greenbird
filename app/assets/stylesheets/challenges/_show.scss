@@ -80,9 +80,27 @@ h2 {
   border: 1px solid #8CC34A;
 }
 
+.btn-green-bird-empty-p {
+  color: #EA526F;
+  padding: 15px 35px;
+  border: 1px solid #EA526F;
+  border-radius: 4px;
+  background: transparent;
+  transition: 0.3s ease;
+}
+
+.btn-green-bird-empty-p:hover {
+  background: #EA526F;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #EA526F;
+}
+
+
+
 .btn-green-bird-hover {
   color: #1c280c;
-  padding: 15px 60px;
+  padding: 15px 35px;
   border: 1px solid #1c280c;
   border-radius: 4px;
   background: #e0efce;
