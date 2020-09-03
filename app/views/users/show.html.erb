@@ -158,7 +158,7 @@
           <hr class="w-75">
           <% if @challenges_done != [] %>
             <div class="pie-padding">
-            <%= pie_chart @challengestest.group(:category).count, colors: ["#ea526f","#8CC34A", "#FBA870", "#183059", "#9FBBCC"], legend: "right", donut: true %>
+            <%= pie_chart @challengestest.group(:category).count, colors: @colors, legend: "right", donut: true %>
             </div>
           <% else %>
             <p>No challenge done yet!</p>

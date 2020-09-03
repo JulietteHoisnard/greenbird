@@ -75,17 +75,25 @@ class UsersController < ApplicationController
     end
     p @datachallengeuser
 
+    #FRIENDSHIP
     friendships = Friendship.where("user_id = ? OR friend_user_id = ?", @user.id, @user.id)
     @friends = User.where(id: friendships.pluck(:user_id, :friend_user_id).flatten - [@user.id])
 
-    #changes for popup badges start here
+    #PIECHART
     @challengestest = @user.challenges.where(id: ChallengeUser.where(user_id: @user.id, completed: true).pluck(:challenge_id).flatten)
+    #colors of pie chart
+    category_colors = {"food"=> "#ea526f","home"=> "#8CC34A", "transport"=> "#FBA870", "zero_waste"=> "#183059", "civic_action"=> "#9FBBCC"}
+    @colors = []
+    @challengestest.group(:category).count.each do |category, _|
+      @colors << category_colors[category]
+    end    
+    
+    #changes for popup badges start here
 
      respond_to do |format|
       format.html
       format.json { render json: { challenges_done: @challenges_done } }
     end
-    #end here
 
   end
 
