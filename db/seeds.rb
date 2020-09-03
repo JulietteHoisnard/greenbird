@@ -15,16 +15,16 @@ puts "Creating challenges..."
 one = Challenge.create!(
   title: "Commute by Bike",
   call_to_action: "I commute by bike today whether going to work, sports, or shopping",
-  description: "Grab your bike and cycle to your destination. It's ten times more environmentally friendly than going by car — and you get some fresh air too!",
-  # photo
-  link: "https://www.sciencedirect.com/science/article/pii/S0048969717301559",
+  description: "Grab your bike and cycle to your destination. It's ten times more environmentally friendly than going by car — and you get some fresh air too! Need help to find a bike? Click on the Discover more button!",
+  # photo is added via cloudinary
+  link: "https://citymapper.com/london?lang=en",
   category: "transport",
   infobox_title: "The benefits of cycling",
   infobox_desc: "It's good for the environment and your health!",
   infobox_link: "https://ecf.com/news-and-events/news/how-much-co2-does-cycling-really-save",
   impact_level: "medium",
-  impact_co: 1000,
-  impact_money: 10000,
+  impact_co: 2895,
+  impact_money: 4500,
   impact_desc: "Reduces air pollution and noise pollution. Improves health and wards off respiratory diseases"
 )
 
@@ -38,7 +38,7 @@ two = Challenge.create(
   title: "Eat Lower on the Food Chain",
   call_to_action: "I will have all vegetarian meals today",
   description: "Vegetarian meals can be healthier and more cost-effective than meat-based diets, not to mention that meat lovers have a much higher carbon footprint. You can reduce your footprint by a quarter just by cutting down on red meats such as beef and lamb.",
-  #photo
+  # photo is added via cloudinary
   link: "https://www.bbcgoodfood.com/recipes/collection/quick-veggie",
   category: "food",
   infobox_title: "Read more about being a vegetarian",
@@ -60,7 +60,7 @@ three = Challenge.create(
   title: "Reduce Single-Use Plastic",
   call_to_action: "I bring my own bag and avoid plastic.",
   description: "Plastic can take up to 2000 years to decompose. In the meantime, it ends up in oceans and in the stomachs of many animals, making them sick. Getting rid of the use of plastic will also save millions of barrels of oil — a valuable natural resource.",
-  # photo
+  # photo is added via cloudinary
   link: "https://www.eartheclipse.com/environment/serious-effects-plastic-bags.html",
   category: "zero waste",
   infobox_title: "Read more about benefits of recycling",
@@ -81,7 +81,7 @@ four = Challenge.create(
   title: "Laundry",
   call_to_action: "I line-dry my clothes.",
   description: "One dryer load uses 5 times more electricity than washing – by simply line-drying your clothes, you can save 1/3 of their carbon footprint. Drying clothes naturally is by far the best way to do it: your clothes will last longer and the energy provided is free and non-polluting.",
-  # photo
+  # photo is added via cloudinary
   link: "https://www.huffpost.com/entry/7-instant-ways-to-reduce-your-carbon-footprint_b_59321992e4b00573ab57a383",
   category: "home",
   infobox_title: "Make your clothes last longer and save energy",
@@ -102,7 +102,7 @@ five = Challenge.create(
   title: "Minimalism",
   call_to_action: "I will have an open mind towards minimalism.",
   description: "You can live more sustainably by reducing consumption and using long-lasting items. A great first step to take is to evaluate what you own, declutter, and practice conscious purchasing.",
-  # photo
+  # photo is added via cloudinary
   link: "https://link.springer.com/article/10.1007/s41042-020-00030-y",
   category: "home",
   infobox_title: "Quality over quantity",
@@ -118,3 +118,45 @@ file = URI.open('https://res.cloudinary.com/giuliettainthecloud/image/upload/v15
 five.photo.attach(io: file, filename: 'minimalism.jpg', content_type: 'image/jpg')
 
 puts "Challenge #{five.title} created!"
+
+six = Challenge.create(
+  title: "Reusable bottle",
+  call_to_action: "I use a reusable bottle and refuse any plastic bottles or plastic cup.",
+  description: "A reusable water bottle takes less oil to produce, replaces all the plastics that you would have used and thereby reduces both your carbon footprint and helps reduce the plastic burden on landfills, oceans, streams and other places that plastic waste ends up.",
+  # photo is added via cloudinary
+  link: "https://monsterthreads.com.au/collections/monsterthreads-water-bottles-thermos",
+  category: "zero waste",
+  infobox_title: "Bring a water bottle everywhere",
+  infobox_desc: "Discover the many advantages of using reusable bottles with this infographic!",
+  infobox_link: "https://biofriendlyplanet.com/green-alternatives/reusables/the-environmental-advantages-of-reusable-water-bottles/",
+  impact_level: "medium",
+  impact_co: 30,
+  impact_money: 1500,
+  impact_desc: "Reduces amount of waste"
+)
+
+file = URI.open('https://res.cloudinary.com/giuliettainthecloud/image/upload/v1598533216/greenbird/water-bottles_rk4kqc.jpg')
+six.photo.attach(io: file, filename: 'water_bottles.jpg', content_type: 'image/jpg')
+
+puts "Challenge #{six.title} created!"
+
+seven = Challenge.create(
+  title: "Greenpeace",
+  call_to_action: "I register to Greenpeace newsletter.",
+  description: "I follow Greenpeace to be aware of the main current environmental issues the world is facing.",
+  # photo is added via cloudinary
+  link: "https://www.greenpeace.org.uk/",
+  category: "civic action",
+  infobox_title: "I sign a Greenpeace petition.",
+  infobox_desc: "The more people support Greenpeace, the bigger the impact on the environment.",
+  infobox_link: "https://www.greenpeace.org.uk/",
+  impact_level: "medium",
+  impact_co: 30,
+  impact_money: 10,
+  impact_desc: "Empowering citizens"
+)
+
+file = URI.open('https://res.cloudinary.com/giuliettainthecloud/image/upload/v1598533216/greenbird/markus-spiske-dkGjswObGPY-unsplash_oau2lw.jpg')
+seven.photo.attach(io: file, filename: 'greenpeace.jpg', content_type: 'image/jpg')
+
+puts "Challenge #{seven.title} created!"
