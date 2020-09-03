@@ -6,7 +6,7 @@
           <%=cl_image_tag @user.avatar_url,:class=>"avatar-user-profile", crop: :fill%>
           <div class="card-body">
             <div class="row description justify-content-center">
-              <div class="col-xl-12 text-center">
+              <div class="col-xl-12 text-center headers">
                 <p><strong><%= @user.username %></strong></p>
                 <hr class="w-75">
                 <p>My Country:</p>
@@ -31,7 +31,7 @@
     <div class="col-sm-8">
       <div class="row">
         <div class="card-graph shadow">
-          <div class="card-body">
+          <div class="card-body headers">
             <p><strong>CO2 emissions and my current achievements</strong></p>
             <hr class="w-75">
             <div class="graphs">
@@ -60,7 +60,7 @@
         <div class="card-badges shadow">
           <div class="">
             <div class="row description justify-content-center">
-              <div class="col-xl-12">
+              <div class="col-xl-12 headers">
                 <p><strong>My badges</strong></p>
                 <hr class="w-75">
                 <div class="list-badges">
@@ -128,7 +128,7 @@
     </div>
     <div class="col-sm-8 no-p">
       <div class="row">
-        <div class="friends-section shadow">
+        <div class="friends-section shadow headers">
           <p><strong>My friends</strong></p>
           <hr class="w-75">
           <div class="row mt-3 px-3">
@@ -153,7 +153,7 @@
         </div>
 
         <div class="row">
-          <div class="friends-section shadow">
+          <div class="friends-section shadow headers">
           <p><strong>Categories of challenges</strong></p>
           <hr class="w-75">
           <% if @challenges_done != [] %>
@@ -169,5 +169,6 @@
   </div>
 </div>
  <div style="clear:both"></div>
+</div>
 
 
