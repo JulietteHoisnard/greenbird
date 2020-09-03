@@ -14,8 +14,10 @@ class ChallengesController < ApplicationController
     @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
     @all_challenges = ChallengeUser.where(user_id: current_user.id).order(:challenge_id)
 
-    @instance = @all_challenges.where(challenge_id: @challenge.id).first
     # @instance makes attributes like completed and opt_completed accessible
+    @instance = @all_challenges.where(challenge_id: @challenge.id).first
+    
+    #CHALLENGE CATEGORY: TAG COLOR
     case @challenge.category
     when "home"
       @classtagcolor = "tag_home"
