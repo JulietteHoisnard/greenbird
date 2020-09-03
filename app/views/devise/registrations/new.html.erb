@@ -20,16 +20,12 @@
                     input_html: { autocomplete: "new-password" } %>
       </div>
 
-      <div class="form-actions btn btn-success">
+      <div class="form-actions">
         <%= f.button :submit, "Sign up" %>
       </div>
     <% end %>
-    <br>
 
-      <div class="btn btn-success">
-      <%= link_to "Log in", new_session_path(resource_name) %>
-      </div>
-
+    <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
