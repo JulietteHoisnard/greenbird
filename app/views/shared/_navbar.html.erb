@@ -11,21 +11,21 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item headers">
+        <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item headers">
+        <li class="nav-item">
           <%= link_to "My dashboard", dashboard_path(current_user), class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown headers">
+        <li class="nav-item dropdown">
           <%= cl_image_tag current_user.avatar_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right headers" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My profile", user_path(current_user), class: "dropdown-item"%>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
-        <li class="nav-item headers">
+        <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
