@@ -126,7 +126,7 @@ six = Challenge.create(
   # photo is added via cloudinary
   link: "https://monsterthreads.com.au/collections/monsterthreads-water-bottles-thermos",
   category: "zero waste",
-  infobox_title: "The real style of bringing water bottle everywhere",
+  infobox_title: "Bring a water bottle everywhere",
   infobox_desc: "Discover the many advantages of using reusable bottles with this infographic!",
   infobox_link: "https://biofriendlyplanet.com/green-alternatives/reusables/the-environmental-advantages-of-reusable-water-bottles/",
   impact_level: "medium",
@@ -147,8 +147,8 @@ seven = Challenge.create(
   # photo is added via cloudinary
   link: "https://www.greenpeace.org.uk/",
   category: "civic action",
-  infobox_title: "I sign a Greenpeace petition that I find important.",
-  infobox_desc: "The more people support Greenpeace, the more citizens can have a positive impact on political decision about an environmental issue.",
+  infobox_title: "I sign a Greenpeace petition.",
+  infobox_desc: "The more people support Greenpeace, the bigger the impact on the environment.",
   infobox_link: "https://www.greenpeace.org.uk/",
   impact_level: "medium",
   impact_co: 30,
