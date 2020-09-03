@@ -53,27 +53,35 @@
         </div>
 
     <% else %>
-      <div class="half-bottom shadow margin-ranking-card">
-        <p>No challenges completed yet!</p>
+      <div class="half-bottom shadow margin-ranking-card" id="sad-box">
+        <h2>No challenges completed yet!</h2>
       </div>
     <% end %>
 
     <% if @challenge %>
 
-      <div class="half-bottom shadow d-flex align-items-center justify-content-center", style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
-        <%= link_to challenge_path(@challenge.challenge) do %>
-          <div class="containerchallenge d-flex d-md-block ">
-            <h2>Next challenge:</h2>
-            <h4><%= @challenge.challenge.title %></h4>
-          </div>
-            <div class="tag <%="tag_#{@challenge.challenge.category.split(' ').join('_')}" %>" >
-            <%= @challenge.challenge.category %>
-          </div>
+      <% if @today_done %>
+        <div div class="half-bottom shadow" id="wait-box">
+          <h2>Check back tomorrow for another challenge!</h2>
+        </div>
+
+      <% else %>
+
+        <div class="half-bottom shadow d-flex align-items-center justify-content-center", style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
+          <%= link_to challenge_path(@challenge.challenge) do %>
+            <div class="containerchallenge d-flex d-md-block ">
+              <h2>Next challenge:</h2>
+              <h4><%= @challenge.challenge.title %></h4>
+            </div>
+              <div class="tag <%="tag_#{@challenge.challenge.category.split(' ').join('_')}" %>" >
+              <%= @challenge.challenge.category %>
+            </div>
+          <% end %>
+        </div>
         <% end %>
-      </div>
     <% else %>
-      <div div class="half-bottom shadow">
-        <h3>Stay tuned for more challenges!</h3>
+      <div div class="half-bottom shadow" id="done-box">
+        <h2>Stay tuned for more challenges!</h2>
       </div>
     <% end %>
   </div>
@@ -105,7 +113,7 @@
       </div>
       <div class="ranking-card test2 shadow">
         <span class="emoji">🤓</span>
-        <p><strong>Optional challenges done</strong></p>
+        <p><strong>Bonus challenges done</strong></p>
         <hr class="w-75 white-color">
         <div class="f-flex justify-content-center align-items-center">
           <p class="number"><%= @opt_challenges_done.count %></p>

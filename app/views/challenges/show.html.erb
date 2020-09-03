@@ -14,7 +14,7 @@
       </div>
 
       <div class="justify-content-center btn-c-cta d-flex">
-        <%= link_to 'More info', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
+        <%= link_to 'Discover more', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
         <% if @instance.completed %>
           <%= button_to "Already completed!", @challenge, disabled: true, class: "link-color btn-green-bird-done btn-medium-size ml-3" %>
         <% else %>
@@ -30,14 +30,14 @@
       <div class="row d-flex justify-content-around mt-5">
 
         <div class="col-4 d-flex justify-content-center">
-          <div class="btn-green-bird-hover infobox">
-            View bonus challenge
+          <div class="btn-green-bird-empty-p w infobox">
+            <i class="fas fa-angle-down"></i> &nbspView bonus challenge &nbsp<i class="fas fa-angle-down"></i>
           </div>
         </div>
 
         <div class="col-4 d-flex justify-content-center">
-          <div class="btn-green-bird-hover databox">
-            View your impact
+          <div class="btn-green-bird-empty-p w databox">
+            <i class="fas fa-angle-down"></i> &nbspView your impact &nbsp<i class="fas fa-angle-down"></i>
           </div>
         </div>
 
@@ -67,7 +67,7 @@
         <% if @instance.opt_completed %>
           <%= link_to "You've already completed this challenge!", 'javascript:;', class: "link-color btn-green-bird-done btn-medium-size", style: "color: white; text-decoration: none" %>
         <% else %>
-          <%= button_to 'Optional challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
+          <%= button_to 'Bonus challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
         <% end %>
       </div>
 
@@ -76,10 +76,10 @@
     <div class="col-6">
       <div class="small-box data-challenge box">
         <p><strong>If I do this action every day for a year, I save:</strong></p>
+        <br>
         <h3><strong><%= @challenge.impact_co %> kg of CO2</strong></h3>
-        <p>Level: <%= @challenge.impact_level %></p>
-        <p>Yearly savings: <%= @challenge.impact_money %> €</p>
-        <p>Main impacts: <%= @challenge.impact_desc %></p>
+        <p><strong>Yearly savings:</strong> <%= @challenge.impact_money %> €</p>
+        <p><strong>Main impacts:</strong> <%= @challenge.impact_desc %></p>
       </div>
 
     </div>
