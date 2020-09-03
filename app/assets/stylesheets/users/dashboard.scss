@@ -171,12 +171,17 @@
   text-shadow: 2px 2px 8px darkgrey;
 }
 
-#done-box h3 {
+#done-box h2 {
   color: #4c4c57;
+  margin-top: 80px;
 }
 
 #wait-box {
   background-image: image-url('wait.jpg');
   background-size: cover;
   text-shadow: 2px 2px 8px #080808;
+}
+
+#wait-box h2 {
+  margin-top: 80px;
 }
