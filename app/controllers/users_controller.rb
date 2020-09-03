@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     @opt_challenges_done = ChallengeUser.where(user_id: current_user.id, opt_completed: true).order(:challenge_id)
 
-    # @today_done = @challenges_done.where(date_of_completion: Date.today).first
+    @today_done = @challenges_done.where(date_of_completion: Date.today).first
     # @yesterday_done = @challenges_done.where(date_of_completion: Date.today - 1).first
 
     streak
@@ -36,9 +36,10 @@ class UsersController < ApplicationController
 
   def show
     @user.challenges = Challenge.all
-    @challenges_done = ChallengeUser.where(user_id: current_user.id, completed: true).order(:challenge_id)
+    @challenges_done = ChallengeUser.where(user_id: @user.id, completed: true).order(:challenge_id)
     # with the above line you can access and use data from the challenges the user has completed
 
+    #GRAPH CO2 EMISSION PER COUNTRY
     @data = Hash.new
     CSV.foreach("db/co-emissions-per-capita.csv", headers: true) do |row|
       if row['Entity'] == 'World'
@@ -58,7 +59,7 @@ class UsersController < ApplicationController
     end
     p @datauser
 
-
+    #GRAPH CO2 SAVINGS PER USER
     @datachallengeuser = Hash.new
     @datatarget = Hash.new
     counter = 0
@@ -85,12 +86,11 @@ class UsersController < ApplicationController
     category_colors = {"food"=> "#ea526f","home"=> "#8CC34A", "transport"=> "#FBA870", "zero_waste"=> "#183059", "civic_action"=> "#9FBBCC"}
     @colors = []
     @challengestest.group(:category).count.each do |category, _|
-      @colors << category_colors[category]
+      @colors << category_colors[category.split(' ').join('_')]
     end    
     
     #changes for popup badges start here
-
-     respond_to do |format|
+    respond_to do |format|
       format.html
       format.json { render json: { challenges_done: @challenges_done } }
     end
