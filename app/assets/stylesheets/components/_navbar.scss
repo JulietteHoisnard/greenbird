@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #8CC34A;
+  // color: #FFFFFF;
+    .nav-link {
+    color: #000000;
+  }
+  // font-weight: bold;
 }
 
 .navbar-home {
