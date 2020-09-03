@@ -39,13 +39,13 @@
             <%= line_chart [
               {name: "#{@user.country} CO2 emissions per year per capita", data: @datauser},
               {name: "World CO2 emissions per year per capita", data: @data}
-            ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#8CC34A", "#FBA870"], discrete: true, id: "users-chart", width: "300px", height: "300px", points: false%>
+            ],xmin: "1950-01-01", xmax: "2021-01-01", colors: ["#8CC34A", "#FBA870"], discrete: true, id: "users-chart", width: "300px", height: "300px", xtitle: "Size", ytitle: "Population", points: false%>
             </h4>
             <h4 class="card-title">
             <%= line_chart [
               {name: 'My yearly challenge impact', data: @datachallengeuser},
               {name: "World target", data: @datatarget}
-            ],xmin: 0, xmax: 5, ymin: 0, ymax: 15, colors: ["#8CC34A", "#FBA870"], class: "users-chart", width: "300px", height: "300px"%>
+            ],xmin: 0, xmax: 5, ymin: 0, ymax: 15, colors: ["#8CC34A", "#FBA870"], class: "users-chart", xtitle: "Size", ytitle: "Population", width: "300px", height: "300px"%>
             </h4>
           </div>
         </div>
