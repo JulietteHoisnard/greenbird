@@ -60,17 +60,25 @@
 
     <% if @challenge %>
 
-      <div class="half-bottom shadow d-flex align-items-center justify-content-center", style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
-        <%= link_to challenge_path(@challenge.challenge) do %>
-          <div class="containerchallenge d-flex d-md-block ">
-            <h2>Next challenge:</h2>
-            <h4><%= @challenge.challenge.title %></h4>
-          </div>
-            <div class="tag <%="tag_#{@challenge.challenge.category.split(' ').join('_')}" %>" >
-            <%= @challenge.challenge.category %>
-          </div>
-        <% end %>
-      </div>
+      <% if @today_done %>
+        <div div class="half-bottom shadow" id="wait-box">
+          <h2>Check back tomorrow for another challenge!</h2>
+        </div>
+
+      <% else %>
+
+        <div class="half-bottom shadow d-flex align-items-center justify-content-center", style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>')">
+          <%= link_to challenge_path(@challenge.challenge) do %>
+            <div class="containerchallenge d-flex d-md-block ">
+              <h2>Next challenge:</h2>
+              <h4><%= @challenge.challenge.title %></h4>
+            </div>
+              <div class="tag <%="tag_#{@challenge.challenge.category.split(' ').join('_')}" %>" >
+              <%= @challenge.challenge.category %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     <% else %>
       <div div class="half-bottom shadow" id="done-box">
         <h2>Stay tuned for more challenges!</h2>
