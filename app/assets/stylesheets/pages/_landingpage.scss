@@ -13,21 +13,37 @@
 #step-one:hover {
   color: white;
   background-color: #183059;
+
+  hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.479);
+  }
 }
 
 #step-two:hover {
   color: white;
   background-color: #FBA870;
+
+  hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.479);
+  }
 }
 
 #step-three:hover {
   color: white;
   background-color:#EA526F;
+
+  hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.479);
+  }
 }
 
 #step-four:hover {
   color: white;
   background-color:#8dc34a;
+
+  hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.479);
+  }
 }
 
 .green-border {
@@ -87,3 +103,4 @@ h3 {
 .headers {
   color: #495057;
 }
+
