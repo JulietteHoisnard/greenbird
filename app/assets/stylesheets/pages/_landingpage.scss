@@ -1,6 +1,6 @@
 .card-lp-new {
   border-radius: 4px;
-  margin: 20px 0;
+  margin: 20px auto;
   max-width: 275px;
   height: 250px;
   text-align: center;
@@ -10,7 +10,7 @@
   color: #495057;
 }
 
-#step-one:hover {
+#step-one:hover, #step-one:active {
   color: white;
   background-color: #183059;
 
@@ -19,7 +19,7 @@
   }
 }
 
-#step-two:hover {
+#step-two:hover, #step-two:active {
   color: white;
   background-color: #FBA870;
 
@@ -28,7 +28,7 @@
   }
 }
 
-#step-three:hover {
+#step-three:hover, #step-three:active {
   color: white;
   background-color:#EA526F;
 
@@ -37,7 +37,7 @@
   }
 }
 
-#step-four:hover {
+#step-four:hover, #step-four:active {
   color: white;
   background-color:#8dc34a;
 
