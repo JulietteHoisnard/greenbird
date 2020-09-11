@@ -25,3 +25,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+}
