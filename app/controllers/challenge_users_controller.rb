@@ -14,7 +14,7 @@ class ChallengeUsersController < ApplicationController
     @challenge_user.opt_completed = true
     @challenge_user.save
     sleep (3.0)
-    redirect_to challenge_path(@challenge)
+    redirect_to dashboard_path(@user)
   end
 
   private
