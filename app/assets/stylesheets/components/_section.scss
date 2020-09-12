@@ -10,3 +10,9 @@
   border-radius: 5px;
 }
 
+@media screen and (max-width: 480px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+}
