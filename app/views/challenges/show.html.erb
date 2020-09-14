@@ -8,22 +8,24 @@
         <h2><%= @challenge.call_to_action %></h2>
       </div>
 
-      <div class="justify-content-center">
+      <div class=" description justify-content-center">
         <p><%= @challenge.description %></p>
         <br>
       </div>
 
       <div class="justify-content-center btn-c-cta d-flex">
         <%= link_to 'Discover more', @challenge.link, target: "_blank", class: "link-color btn-green-bird-empty w" %>
-        <% if @instance.completed %>
-          <%= button_to "Already completed!", @challenge, disabled: true, class: "link-color btn-green-bird-done btn-medium-size ml-3" %>
-        <% else %>
-          <%= button_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird ml-3" %>
-        <% end %>
+        <div class='margin-button'>
+          <% if @instance.completed %>
+            <%= button_to "Already completed!", @challenge, disabled: true, class: "link-color btn-green-bird-done btn-medium-size ml-md-3 ml-xl-3 mt-3 mt-md-0" %>
+          <% else %>
+            <%= button_to 'Challenge done!', challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
+          <% end %>
+        </div>
       </div>
 
-<!-- the following div is for spacing. don't take it out!! -->
-      <div class="row my-4">
+      <!-- the following div is for spacing. don't take it out!! -->
+      <%# <div class="buttons-display row my-md-20 my-xl-4">
         <p></p>
       </div>
 
@@ -39,9 +41,9 @@
           <div class="btn-green-bird-hover w databox">
             <i class="fas fa-angle-down"></i> &nbspView your impact &nbsp<i class="fas fa-angle-down"></i>
           </div>
-        </div>
+        </div> %>
 
-      </div>
+      <%# </div> %>
 
     </div>
 
@@ -52,10 +54,8 @@
   </div>
 
 
-
-
   <div class="row d-flex">
-    <div class="col-6">
+    <div class="col-xl-6 col-12">
       <div class="small-box info-challenge box">
         <div class="mb-2">
           <h3><%= @challenge.infobox_title %></h3>
@@ -64,16 +64,17 @@
         <div class="button-read mb-4">
           <%= link_to 'Read more', @challenge.infobox_link, target: "_blank", class: "link-color btn-green-bird-empty btn-medium-size" %>
         </div>
-        <% if @instance.opt_completed %>
-          <%= button_to "Already completed!", @challenge, disabled: true, class: "link-color btn-green-bird-done btn-medium-size" %>
-        <% else %>
-          <%= button_to 'Bonus challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
-        <% end %>
+        <div class='margin-button'>
+          <% if @instance.opt_completed %>
+            <%= button_to "Already completed!", @challenge, disabled: true, class: "link-color btn-green-bird-done btn-medium-size mt-3 mt-xl-0" %>
+          <% else %>
+            <%= button_to 'Bonus challenge done!', update_opt_challenge_challenge_user_path(@challenge, @instance.id), method: :patch, id: "sweet-alert-demo", class: "link-color btn-green-bird btn-medium-size" %>
+          <% end %>
+        </div>
       </div>
-
     </div>
 
-    <div class="col-6">
+    <div class="col-xl-6 col-12">
       <div class="small-box data-challenge box">
         <p><strong>If I do this action every day for a year, I save:</strong></p>
         <br>
@@ -89,4 +90,6 @@
 
 </div>
 
-<%= javascript_pack_tag 'challenge-show' %>
+<%# <% if (window.matchMedia('(max-width: 600px)')) { %>
+  <%# <%= javascript_pack_tag 'challenge-show' %>
+<%# <% } %>

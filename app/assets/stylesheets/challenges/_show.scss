@@ -118,3 +118,33 @@ h2 {
 .databox {
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 720px) {
+
+  .description {
+    display: none;
+  }
+
+  .btn-c-cta {
+    display: flex;
+    flex-direction: column;  
+  }
+
+  .container {
+    padding-left: 10px; 
+    padding-right: 10px;
+  }
+
+  .btn-green-bird-hover {
+    display: hidden !important;
+  }
+
+  .margin-button {
+    margin: 10px 0;
+  }
+  
+  .small-box {
+    height: 350px;
+  }
+} 
