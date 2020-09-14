@@ -10,13 +10,13 @@
 
     <% if @challenges_done != [] %>
 
-        <div id="carouselExampleControls" class="half-bottom-caroussel shadow margin-ranking-card carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" class="half-bottom shadow margin-ranking-card carousel slide" data-ride="carousel">
 
           <div class="carousel-inner shadow">
             <div class="carousel-item active">
               <img src="<%= cl_image_path @challenges_done.first.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
               <%= link_to challenge_path(@challenges_done.first.challenge) do %>
-                <div class="carousel-caption d-none d-md-block align-middle">
+                <div class="carousel-caption d-md-block align-middle">
                   <h2>Completed challenge:</h2>
                   <h4><%= @challenges_done.first.challenge.title %></h4>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="carousel-item">
                   <img src="<%= cl_image_path challenge.challenge.photo.key, height: 400, width: 600, crop: :fill %>" class="slide d-block w-100" alt="...">
                   <%= link_to challenge_path(challenge.challenge) do %>
-                    <div class="carousel-caption d-none d-md-block align-middle">
+                    <div class="carousel-caption d-md-block align-middle">
                       <h2>Completed challenge:</h2>
                       <h4><%= challenge.challenge.title %></h4>
                     </div>
@@ -53,7 +53,7 @@
         </div>
 
     <% else %>
-      <div class="half-bottom shadow margin-ranking-card" id="sad-box">
+      <div class="half-bottom not-caroussel shadow margin-ranking-card" id="sad-box">
         <h2>No challenges completed yet!</h2>
       </div>
     <% end %>
@@ -61,7 +61,7 @@
     <% if @challenge %>
 
       <% if @today_done %>
-        <div div class="half-bottom shadow" id="wait-box">
+        <div div class="half-bottom not-caroussel shadow" id="wait-box">
           <h2>Check back tomorrow for another challenge!</h2>
         </div>
 
@@ -80,13 +80,13 @@
         </div>
       <% end %>
     <% else %>
-      <div div class="half-bottom shadow" id="done-box">
+      <div div class="half-bottom not-caroussel shadow" id="done-box">
         <h2>Stay tuned for more challenges!</h2>
       </div>
     <% end %>
   </div>
     <div class="rankings-container">
-      <div class="ranking-card test1 shadow margin-ranking-card ">
+      <div class="ranking-card color1 shadow margin-ranking-card ">
         <span class="emoji">🌿</span>
         <p><strong>My actual CO2 reduction</strong></p>
             <hr class="w-75 white-color">
@@ -94,7 +94,7 @@
               <p class="number"><%= @score %> kg</p>
             </div>
       </div>
-      <div class="ranking-card test4 shadow margin-ranking-card">
+      <div class="ranking-card color4 shadow margin-ranking-card">
         <span class="emoji">🔥</span>
         <p><strong>Days in a row</strong></p>
         <hr class="w-75 white-color">
@@ -102,7 +102,7 @@
             <p class="number"><%= @streak %></p>
           </div>
       </div>
-      <div class="ranking-card test3 orange shadow margin-ranking-card">
+      <div class="ranking-card color3 orange shadow margin-ranking-card">
         <span class="emoji">💪</span>
         <p><strong>Challenges done</strong></p>
         <hr class="w-75 white-color">
@@ -111,7 +111,7 @@
         </div>
 
       </div>
-      <div class="ranking-card test2 shadow">
+      <div class="ranking-card color2 shadow">
         <span class="emoji">🤓</span>
         <p><strong>Bonus challenges done</strong></p>
         <hr class="w-75 white-color">

@@ -3,10 +3,8 @@
   position: relative;
   margin: 70px 0 0px 0;
   padding: 35px 0 0 0;
-  // background: white;
   border-radius: 4px;
   height: 100px;
-  // box-shadow: 3px 8px 10px #888888;
 }
 
 .border-h3 {
@@ -54,22 +52,22 @@
   font-size: 30px;
 }
 
-.test1 {
+.color1 {
   color: white;
   background-color: #183059;
 }
 
-.test2 {
+.color2 {
   color: white;
   background-color: #FBA870;
 }
 
-.test3 {
+.color3 {
   color: white;
   background-color:#EA526F;
 }
 
-.test4 {
+.color4 {
   color: white;
   background-color:#8dc34a;
 }
@@ -81,23 +79,16 @@
 .bottom-box {
   display: flex;
   justify-content: space-between;
-  // margin-bottom: 20px;
 }
 
-// similar to class small-box in clallenges _show
-.half-bottom {
-  border-radius: 4px;
+.not-caroussel {
   padding: 30px;
-  margin: 20px 0;
-  flex: 0 0 auto;
-  width: 49%;
   background: rgb(98, 100, 96);
   color: white;
   text-align: center;
-  position: relative;
 }
 
-.half-bottom-caroussel {
+.half-bottom {
   border-radius: 4px !important;
   margin: 20px 0 !important;
   flex: 0 0 auto !important;
@@ -116,7 +107,6 @@
 
 .avatar-banner {
   border: 5px solid white;
-
 }
 
 .carousel-caption {
@@ -131,9 +121,6 @@
 .carousel-item-next {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) !important;
 }
-
-
-
 
 .carousel-item:after {
   content:'';
@@ -185,4 +172,36 @@
 
 #wait-box h2 {
   margin-top: 80px;
+}
+
+@media screen and (max-width: 720px) {
+  .bottom-box {
+    flex-direction: column;
+  }
+
+  .half-bottom {
+    width: 100% !important;
+  }
+
+  .rankings-container {
+    flex-direction: column;
+  }
+
+  .ranking-card {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .carousel-caption {
+    top: 0px !important;
+  }
+
+  #done-box h2 {
+    color: #4c4c57;
+    margin-top: 40px;
+  }
+
+  .number {
+    font-size: 30px;
+  }
 }
