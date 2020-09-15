@@ -1,6 +1,6 @@
 .section {
-  padding-top: 90px;
-  padding-bottom: 40px;
+  margin-top: 90px;
+  margin-bottom: 40px;
 }
 
 .green-row {
@@ -10,3 +10,9 @@
   border-radius: 5px;
 }
 
+@media screen and (max-width: 480px) {
+  .section {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+}
