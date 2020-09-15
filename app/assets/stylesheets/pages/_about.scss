@@ -4,7 +4,30 @@
   max-width: 80%;
   // height: 250px;
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0;
   background: white;
   color: #495057;
+  overflow: hidden;
+}
+
+.team-about {
+  border-radius: 4px;
+  margin: 20px auto;
+  max-width: 95%;
+  // height: 250px;
+  text-align: center;
+  background: white;
+  color: #495057;
+  overflow: hidden;
+  display: flex;
+}
+
+.card-contents {
+  padding: 20px;
+  margin: 10px auto;
+}
+
+.img-about {
+  width: 40%;
+  object-fit: cover;
 }
