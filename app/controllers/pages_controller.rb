@@ -17,4 +17,7 @@ class PagesController < ApplicationController
       @challenge = Challenge.first
     end
   end
+
+  def about
+  end
 end
